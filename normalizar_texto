@@ -25,7 +25,6 @@ function underlineWord {
 
 forEachMarkdown underlineWord derivations
 forEachMarkdown underlineWord derivation
-
-
-
+forEachMarkdown underlineWord hashmap
+forEachMarkdown underlineWord hashtable
 

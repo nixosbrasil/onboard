@@ -22,6 +22,6 @@ dos `drv` ou baixados de caches.
 
 As realizations podem então ser apenas um arquivo ou uma pasta com arquivos.
 
-Derivations podem ter dependências em outras _derivations_ o que gera um efeito cascata. Se `a` depende de `b` se `a` for realizada primeiro o Nix vai realizar a `b` e então realizar a `a`. Esse conceito de dependência é aplicado para substituir o comportamento de hashmap de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro tendo então um comportamento de árvore. Essa analogia será melhor explicada em breve.
+Derivations podem ter dependências em outras _derivations_ o que gera um efeito cascata. Se `a` depende de `b` se `a` for realizada primeiro o Nix vai realizar a `b` e então realizar a `a`. Esse conceito de dependência é aplicado para substituir o comportamento de _hashmap_ de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro tendo então um comportamento de árvore. Essa analogia será melhor explicada em breve.
 
 O resto basicamente aproveita essa base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.
