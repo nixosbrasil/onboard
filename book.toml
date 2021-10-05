@@ -1,0 +1,19 @@
+[book]
+authors = ["Nixos Brasil"]
+language = "pt"
+multilingual = false
+src = "src"
+title = "Nix - Onboard"
+
+[build]
+build-dir = "public"
+
+[output.html]
+git-repository-url = "https://github.com/nixosbrasil/onboard"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/nixosbrasil/onboard/edit/master/guide/{path}"
+site-url = "/onboard/"
+no-section-label = true
+
+[output.html.fold]
+enable = true
