@@ -1,5 +1,5 @@
 [book]
-authors = ["Nixos Brasil"]
+authors = ["Nixos Brasil <https://t.me/nixosbrasil>"]
 language = "pt"
 multilingual = false
 src = "src"
