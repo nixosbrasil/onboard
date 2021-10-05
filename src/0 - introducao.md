@@ -15,8 +15,10 @@ em arquivos.
 Linguagens de programação geralmente usam um espaço de heap em que alocam memória para os objetos em blocos, nas _derivations_ o espaço alocado é na _nix-store_, que geralmente se localiza na pasta `/nix/store`. Cada objeto é um item nessa pasta.
 
 Os itens dessa pasta podem ser classificados em dois tipos:
-- _Derivations_: aqueles arquivos DRV que são basicamente especificações mastigadas para chegar no outro tipo
-- _Realizations_: o processo de transformar uma definição no objeto em sí é chamado de realization, esses caminhos são gerados dos DRV ou baixados de caches.
+- _Derivations_: aqueles arquivos de extensão `drv` que são basicamente especificações mastigadas para realizar as transformações 
+em uma _derivation_
+- _Realizations_: o processo de transformar uma definição no objeto em sí é chamado de realization, esses caminhos são gerados
+dos `drv` ou baixados de caches.
 
 As realizations podem então ser apenas um arquivo ou uma pasta com arquivos.
 
