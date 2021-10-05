@@ -8,9 +8,7 @@ muda totalmente o jogo: O conceito de _derivation_.
 
 # O que são _derivations_?
 
-Derivations são o conceito de funções puras aplicado a arquivos. Enquanto que em outras linguagens, e no Nix também, os objetos
-manipulados por estas linguagens estão guardados na memória RAM para processamento o Nix tem como operar com transformações
-em arquivos.
+Derivations são o conceito de funções puras aplicado a arquivos. A forma tradicional é utilizando a memória RAM.
 
 Linguagens de programação geralmente usam um espaço de heap em que alocam memória para os objetos em blocos, nas _derivations_ o espaço alocado é na _nix-store_, que geralmente se localiza na pasta `/nix/store`. Cada objeto é um item nessa pasta.
 
