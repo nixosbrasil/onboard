@@ -8,7 +8,7 @@ muda totalmente o jogo: O conceito de _derivation_.
 
 # O que são _derivations_?
 
-Derivations são o conceito de funções puras aplicado a arquivos. A forma tradicional é utilizando a memória RAM.
+_Derivation_ é o conceito de funções puras aplicadas a arquivos. A forma tradicional é utilizando a memória RAM.
 
 Linguagens de programação geralmente usam um espaço de heap em que alocam memória para os objetos em blocos, nas _derivations_ o espaço alocado é na _nix-store_, que geralmente se localiza na pasta `/nix/store`. Cada objeto é um item nessa pasta.
 
@@ -18,8 +18,8 @@ em uma _derivation_
 - _Realizations_: o processo de transformar uma definição no objeto em sí é chamado de realization, esses caminhos são gerados
 dos `drv` ou baixados de caches.
 
-As realizations podem então ser apenas um arquivo ou uma pasta com arquivos.
+As _realizations_ podem ser apenas um arquivo ou uma pasta com arquivos.
 
-Derivations podem ter dependências em outras _derivations_ o que gera um efeito cascata. Se `a` depende de `b` se `a` for realizada primeiro o Nix vai realizar a `b` e então realizar a `a`. Esse conceito de dependência é aplicado para substituir o comportamento de _hashmap_ de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro tendo então um comportamento de árvore. Essa analogia será melhor explicada em breve.
+_Derivations_ podem ter dependências em outras _derivations_ o que gera um efeito cascata. Se `a` depende de `b` e `a` for realizada primeiro o Nix realizará `b` e então realizará `a`. Este conceito de dependência é aplicado para substituir o comportamento de _hashmap_ de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore. Esta analogia será melhor explicada em breve.
 
-O resto basicamente aproveita essa base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.
+O resto basicamente aproveita esta base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.
