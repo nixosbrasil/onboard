@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Nix - Onboard</title>
-        <meta name="robots" content="noindex" />
+        <title>Introdução - Nix - Onboard</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -76,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="0-introducao.html" class="active">Introdução</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -113,6 +112,9 @@
                         </a>
                         <a href="https://github.com/nixosbrasil/onboard" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/nixosbrasil/onboard/edit/master/guide/src/0-introducao.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
                 </div>
@@ -156,35 +158,23 @@ dos <code>drv</code> ou baixados de caches.</li>
 <p>As <em>realizations</em> podem ser apenas um arquivo ou uma pasta com arquivos.</p>
 <p><em>Derivations</em> podem ter dependências em outras <em>derivations</em> o que gera um efeito cascata. Se <code>a</code> depende de <code>b</code> e <code>a</code> for realizada primeiro o Nix realizará <code>b</code> e então realizará <code>a</code>. Este conceito de dependência é aplicado para substituir o comportamento de <em>hashmap</em> de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore. Esta analogia será melhor explicada em breve.</p>
 <p>O resto basicamente aproveita esta base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="analogia-hashmap-vs-árvore"><a class="header" href="#analogia-hashmap-vs-árvore">Analogia: <em>hashmap</em> vs árvore</a></h1>
-<p>Em estrutura de dados busca-se formas de guardar dados na memória a fim de poder recuperá-los de forma mais eficiente. Não nos 
-aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
-<h2 id="o-que-é-uma-hashmaphashtabletabela-hash"><a class="header" href="#o-que-é-uma-hashmaphashtabletabela-hash">O que é uma <em>hashmap</em>/<em>hashtable</em>/tabela hash?</a></h2>
-<p>Se você já programou Python você conhece pelo nome de dicionário, a ideia é basicamente a mesma.</p>
-<p>É uma estrutura de dados em que o programador pode associar um valor a uma chave e depois pode recuperar este mesmo valor partindo desta chave.</p>
-<p><img src="assets/315px-Hash_table_3_1_1_0_1_0_0_SP.svg.png" alt="Exemplo do wikipédia para deixar mais ilustrativo" /></p>
-<h2 id="o-que-é-uma-árvore"><a class="header" href="#o-que-é-uma-árvore">O que é uma árvore?</a></h2>
-<p>É uma estrutura de dados hierárquica, ou seja, tem um ponto mais alto, que se divide entre <code>n</code> caminhos. É composta por nós e arestas. O nó mais alto é o nó raiz, já o nó que não possui filhos é chamado de nó folha. Existem vários tipos de árvores, a mais conhecida é a árvore binária em que cada nó tem até dois nós filhos. Para a nossa analogia assuma que um nó pode ter quantos filhos forem necessários.</p>
-<p><img src="assets/binary_tree-1.png" alt="Exemplo de árvore binária" /></p>
-<h2 id="o-que-isso-tem-a-ver-com-nix"><a class="header" href="#o-que-isso-tem-a-ver-com-nix">O que isso tem a ver com Nix?</a></h2>
-<p>Como gerenciadores de pacotes tradicionais gerenciam pacotes? Mais especificamente, como eles aplicam atualizações?</p>
-<p>Eu, @lucasew, ja usei Arch Linux por aproximandamente um ano e naquele tempo eu usava um setup com i3wm + <a href="https://aur.archlinux.org/packages/polybar/">polybar</a>. A questão é que o polybar depende de uma biblioteca chamada <a href="https://archlinux.org/packages/extra/x86_64/jsoncpp/">jsoncpp</a> e vivia quebrando por causa desta bibiliteca. Por quê?</p>
-<p>A cada atualização de pacote esta biblioteca virava um arquivo diferente e, consequentemente, o polybar tinha que ser atualizado para procurar pelo novo nome. Mensalmente, quando eu atualizava, o polybar simplesmente se recusava de abrir e aí é que reside a analogia do <em>hashmap</em>.</p>
-<p>Quando um pacote é atualizado pelo pacman a versão nova é sobrescrita em cima da antiga e qualquer coisa que assuma algum detalhe de uma versão em específico vai quebrar, e esse é o perigo da mutabilidade.</p>
-<p>O Nix não tem esse problema.</p>
-<p>Ao invés do pacote polybar depender do jsoncpp, uma <em>derivation</em> que compilará o polybar dependerá da <em>derivation</em> que compila o jsoncpp. Caso o jsoncpp atualize, a <em>derivation</em> do polybar será alterada por consequência.</p>
-<p><img src="assets/ex-nix-path-tese-nixos.png" alt="Exemplo que pode ser encontrado na tese sobre o NixOS" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="next" href="analogia-hashmap-arvore.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="next" href="analogia-hashmap-arvore.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -200,10 +190,5 @@ aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
     </body>
 </html>
