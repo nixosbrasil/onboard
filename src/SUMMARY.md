@@ -1,7 +1,7 @@
 # Summary
 
 - [Introdução](./0-introducao.md)
-- [O que eu posso fazer](./o-que-eu-posso-fazer.md)
+- [O que você pode fazer](./o-que-voce-pode-fazer.md)
 - [Tipos de dados](./tipos-de-dados/index.md)
     - [Numérico](./tipos-de-dados/numericos.md)
     - [Textual](./tipos-de-dados/textuais.md)
