@@ -35,3 +35,4 @@
         - [Victor Freire](./externo/digital-gardens/freire.md)
     - [Dotfiles](./externo/dotfiles/index.md)
         - [lucasew](./externo/dotfiles/lucasew.md)
+    - [Referências externas adicionais](./externo/extra.md)
