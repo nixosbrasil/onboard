@@ -15,6 +15,7 @@
     - [Derivation](./tipos-de-dados/derivations.md)
 - [Expressões](./expressoes/index.md)
     - [Inherit](./expressoes/inherit.md)
+    - [With](./expressoes/with.md)
 - [Como pensar em Nix](./como-pensar-em-nix/index.md)
     - [Avaliação preguiçosa](./como-pensar-em-nix/avaliacao-preguicosa.md)
     - [Recursões](./como-pensar-em-nix/recursoes.md)
