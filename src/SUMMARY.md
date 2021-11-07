@@ -14,6 +14,7 @@
     - [Função](./tipos-de-dados/funcoes.md)
     - [Derivation](./tipos-de-dados/derivations.md)
 - [Expressões](./expressoes/index.md)
+    - [Let](./expressoes/let.md)
     - [Inherit](./expressoes/inherit.md)
     - [With](./expressoes/with.md)
 - [Como pensar em Nix](./como-pensar-em-nix/index.md)
@@ -26,3 +27,11 @@
     - [override](./design-patterns/override.md)
 - [Lei da Derivation](./lei-da-derivation.md)
 - [Analogia: hashmap vs árvore](./analogia-hashmap-arvore.md)
+
+---
+- [Externo](./externo/index.md)
+    - [Awesome Nix](./externo/awesome-nix.md)
+    - [Digital Gardens](./externo/digital-gardens/index.md)
+        - [Victor Freire](./externo/digital-gardens/freire.md)
+    - [Dotfiles](./externo/dotfiles/index.md)
+        - [lucasew](./externo/dotfiles/lucasew.md)
