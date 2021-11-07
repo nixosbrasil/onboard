@@ -2,6 +2,10 @@
 
 - [Introdução](./0-introducao.md)
 - [O que você pode fazer](./o-que-voce-pode-fazer.md)
+- [Instalação](./instalacao/index.md)
+    - [Problemas conhecidos](./instalacao/problemas-conhecidos.md)
+    - [Tipos de instalação](./instalacao/tipos.md)
+    - [Comandos para instalação](./instalacao/comandos.md)
 - [Tipos de dados](./tipos-de-dados/index.md)
     - [Numérico](./tipos-de-dados/numericos.md)
     - [Textual](./tipos-de-dados/textuais.md)
