@@ -9,7 +9,6 @@ Uma `realization` de uma `derivation` precisa:
 - Para ter acesso a internet: H(b) pré-definido
 - Para conseguir executar sem H(b) definido: a definição de todas as derivations de entrada já em formato de closure, ou seja, executadas e acessíveis através da nix store.
 
-
 # Exemplos
 
 - Derivations que baixam coisas da internet para poderem realizar este trabalho DEVEM ter o hash do arquivo baixado definido junto.

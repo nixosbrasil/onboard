@@ -18,9 +18,7 @@ curl -L https://nixos.org/nix/install | sh
 
 ![Instalação single user](../assets/instalacao-single-user.png)
 
-
 ## Instalação multiuser
-
 
 ```sh
 curl -L https://nixos.org/nix/install | bash -s -- --daemon
