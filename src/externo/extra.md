@@ -4,10 +4,10 @@
 Explica várias questões e features do Nix em sí. Não aborda nixpkgs ainda.
 
 ## [nix.dev](https://nix.dev/)
-Um guia opinativo de como desenvolvedores podem fazer as suas tarefas usando Nix
+Um guia opinativo de como desenvolvedores podem fazer as suas tarefas usando Nix.
 
 ## [NixOS Wiki](https://nixos.wiki/wiki/Main_Page)
-Algo semelhante a Arch Wiki mas definitivamente não tão completa quanto a Arch Wiki
+Uma wiki nos moldes da Arch Wiki, porém, abordando maneiras específicas do NixOS, como o uso de módulos. Não é tão completa quanto a Arch Wiki mas definitivamente ajuda bastante.
 
 ## [Nix Pills](https://nixos.org/guides/nix-pills/)
-Um guia mais passo a passo sobre como iniciar no Nix
+Um guia mais passo a passo sobre como iniciar no Nix.
