@@ -28,3 +28,9 @@ Experimente expressões como a seguinte:
 ```nix
 (v.override {hello = "world";}).override {foo = "bar";}
 ```
+
+## Aviso
+No nixpkgs são usados dois tipos de overrides nos pacotes.
+
+- O `override` muda os parâmetros da função que é definida seguindo o design pattern `[inputs](./inputs.md)`.
+- O `overrideAttrs` muda os parâmetros passados para a função primitiva que gera a derivation, chamada de `mkDerivation`.
