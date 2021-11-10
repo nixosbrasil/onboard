@@ -1,4 +1,4 @@
-# Attrs
+# Attrsets
 Equivalentes a objetos do Javascript ou dicionários do Python, porém não podem ser modificados depois de declarados.
 
 Para juntar dois attrsets é usado o operador `//`.

@@ -11,8 +11,8 @@ let
 in a # pode ser o b também
 ```
 
-Por Nix ser uma linguagem de avaliação preguiçosa meio que existe uma chamada de função implícita ao se acessar um valor e se acontece de ter um ciclo dá problema.
+Por Nix ser uma linguagem de avaliação preguiçosa meio que existe uma chamada de função implícita ao se acessar um valor e se acontece de ter um ciclo dá um problema conhecido como estouro de pilha, ou stack overflow.
 
-Existem técnicas para evitar esses loops infinitos como a técnica de evitar a expressão `with` no topo do arquivo. Pode ser que evite que o código dê loops mas a principal vantagem é que os loops vão ser bem mais simples de rastrear.
+Existem técnicas para evitar esses loops infinitos como os design patterns [callPackage](../design-patterns/callPackage.md) e [inputs](../design-patterns/inputs.md) e evitar o uso do [with](../expressoes/with.md) no topo do arquivo.
 
-E geralmente loops acontecem porque o usuário não sabe direito o que tá acontecendo.
+Além de reduzir a possibilidade de loops, técnicas assim permitem que loops sejam diagnosticados de uma forma bem mais simples.
