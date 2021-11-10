@@ -21,6 +21,6 @@ with builtins; head
 ```
 
 ## Aviso
-With tem uso desencorajado, principalmente em topo de arquivo pois pode facilitar a ocorrência de loops e dificuldades no rastreamento destes. Um código evitando withs tende a ser um código mais limpo e fácil de manter no longo prazo.
+With tem uso desencorajado, principalmente no topo de arquivo pois impossibilita a análise estática da linguagem, resultando em erros mais genéricos e difíceis de resolver. Um código evitando withs tende a ser um código mais fácil de manter no longo prazo.
 
 Um jeito comum de lidar com isso é usar uma let expression com inherits trazendo apenas o necessário dos escopos. No nixpkgs isso é bem evidente e existem vários exemplos reais bem simples de entender na pasta `lib`.
