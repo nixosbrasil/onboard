@@ -7,9 +7,9 @@ Esta função consegue desmontar a função definida na definição usando o des
 A função `callPackage` pode ser deduzida da seguinte forma:
 
 Sendo
-- `set` o attr de entrada que contêm os valores padrões
+- `set` o attrset de entrada que contêm os valores padrões
 - `f` a função importada da expressão usando o design pattern inputs
-- `overrides` um attr com valores que serão alterados da entrada
+- `overrides` um attrset com valores que serão alterados da entrada
 
 ```nix
 callPackage = set: f: overrides: f ((builtins.intersectAttrs (builtins.functionArgs f) set) // overrides)

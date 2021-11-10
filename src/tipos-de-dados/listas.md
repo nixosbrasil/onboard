@@ -1,7 +1,7 @@
 # Listas
 Uma sequência de valores que podem ter tipos diferentes.
 
-Assim como os attrs, listas não podem ser modificadas depois de declaradas.
+Assim como os attrsets, listas não podem ser modificadas depois de declaradas.
 
 Para juntar duas listas é usado o operador `++`.
 

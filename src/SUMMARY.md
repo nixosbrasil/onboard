@@ -10,7 +10,7 @@
     - [Numérico](./tipos-de-dados/numericos.md)
     - [Textual](./tipos-de-dados/textuais.md)
     - [Lista](./tipos-de-dados/listas.md)
-    - [Attr](./tipos-de-dados/attrs.md)
+    - [Attrset](./tipos-de-dados/attrsets.md)
     - [Função](./tipos-de-dados/funcoes.md)
     - [Derivation](./tipos-de-dados/derivations.md)
 - [Expressões](./expressoes/index.md)

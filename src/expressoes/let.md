@@ -2,7 +2,7 @@
 
 Uma das expressões mais úteis do Nix. Especialmente importante quando existe mais de uma operação na mesma linha e permite que uma operação seja feita em estágios, assim como pode ser usada como um bloco de escopo.
 
-Na essência é como se fosse um attr, tem comportamento de attr, não permite loops de refência assim como attrs porém o objetivo é construção do escopo local.
+Na essência é como se fosse um attr, tem comportamento de attr, não permite loops de refência assim como attrsets porém o objetivo é construção do escopo local.
 
 O modelo mental para entender a ideia é pensar tipo como teoremas são estruturados. Por exemplo:
 

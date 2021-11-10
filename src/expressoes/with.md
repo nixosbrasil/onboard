@@ -6,14 +6,14 @@ Esta primitiva não pode ser usada como um valor mas sim como um prefixo para um
 
 ## Exemplo
 
-With não pode ser usado dentro de attrs e let expressions como valor.
+With não pode ser usado dentro de attrsets e let expressions como valor.
 
 ```nix
 { with builtins; } # Não funciona
 let with builtins; in head # Não funciona
 ```
 
-Se o usuário quer juntar um attr especificado com outro pode usar o operador `//`!.
+Se o usuário quer juntar um attrset especificado com outro pode usar o operador `//`!.
 
 Traz o escopo builtins para o escopo da expressão em seguida que acessa o item head, que implicitamente referencia `builtins.head`
 ```nix

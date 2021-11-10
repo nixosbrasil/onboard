@@ -2,13 +2,13 @@
 
 Provavelmente o que você está pensando é algo relacionado a herança e talvez esteja fazendo o link com linguagens orientadas a objeto. Na verdade o inherit é um [açucar sintático](https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico) para trazer membros de um outro escopo para o escopo atual.
 
-Funciona apenas com attrs e expressões let, que são as formas que são usadas para implementar escopos em Nix, e pode ser expresso de algumas formas diferentes:
+Funciona apenas com attrsets e expressões let, que são as formas que são usadas para implementar escopos em Nix, e pode ser expresso de algumas formas diferentes:
 
 ```nix
 # Traz um valor do escopo atual para dentro do attr
 { inherit builtins; }
 
-# Traz um membro de um attr no escopo para dentro do attr atual
+# Traz um membro de um attrset no escopo para dentro do attrset atual
 { inherit (builtins) fetchTarball map; }
 
 # Exemplo usando expressões let

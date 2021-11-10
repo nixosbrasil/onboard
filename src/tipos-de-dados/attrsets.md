@@ -1,7 +1,7 @@
 # Attrs
 Equivalentes a objetos do Javascript ou dicionários do Python, porém não podem ser modificados depois de declarados.
 
-Para juntar dois attrs é usado o operador `//`.
+Para juntar dois attrsets é usado o operador `//`.
 
 ```nix
 let
@@ -10,7 +10,7 @@ let
 in a // b
 ```
 
-Também é possível especificar attrs aninhados usando duas formas que podem ser interutilizadas sem problemas.
+Também é possível especificar attrsets aninhados usando duas formas que podem ser interutilizadas sem problemas.
 
 ```nix
 let
