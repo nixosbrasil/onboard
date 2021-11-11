@@ -4,7 +4,7 @@ Seja
 - uma derivação D(a, b, c, ...) = z que transforma as entradas em z.
 - uma [função de hash](https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash) H(x) que calcula um hash de algum x, pode ser por exemplo a [SHA256](https://pt.wikipedia.org/wiki/SHA-2).
 
-Uma `realization` de uma `derivação` precisa:
+Uma `realização` de uma `derivação` precisa:
 
 - Para ter acesso a internet: H(z) pré-definido
 - Para conseguir executar sem H(z) definido: a definição de todas as derivações de entrada já em formato de closure, ou seja, executadas e acessíveis através da nix store.

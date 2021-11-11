@@ -16,7 +16,7 @@ Para permitir que uma Nix store seja compartilhada de forma segura entre usuári
 
 Para evitar este problema a Nix store e o banco de dados são atribuídos a um usuário privilegiado, geralmente o root, e os builders são executados por usuários especiais, geralmente chamados de nixbld1, nixbld2 e assim por diante.
 
-Quando um usuário do sistema usa o Nix, operações que lidam com a Nix store, como realizations, são enviadas para um daemon do Nix executando na máquina.
+Quando um usuário do sistema usa o Nix, operações que lidam com a Nix store, como realizações, são enviadas para um daemon do Nix executando na máquina.
 
 Por ser um tanto mais crítica essa questão de segurança apenas usuários confiáveis e usuários pertencentes a grupos confiáveis podem realizar tarefas mais administrativas como especificar caches binários.
 

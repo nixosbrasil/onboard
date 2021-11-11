@@ -9,7 +9,7 @@ Os itens dessa pasta podem ser classificados em dois tipos:
 em uma derivação
 - _Closures_: outros arquivos e pastas, o produto final.
 
-O processo de transformar uma derivação em uma closure é chamado de _realization_, esses caminhos são gerados
+O processo de transformar uma derivação em uma closure é chamado de realização, esses caminhos são gerados
 dos `drv` ou baixados de caches se disponível.
 
 As _closures_ podem ser apenas um arquivo ou uma pasta com arquivos.
