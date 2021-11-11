@@ -12,6 +12,8 @@ em uma derivação
 O processo de transformar uma derivação em uma closure é chamado de realização, esses caminhos são gerados
 dos `drv` ou baixados de caches se disponível.
 
+![um diagrama para esclarecer um tanto melhor](../assets/grafo-derivation-closure.png)
+
 As _closures_ podem ser apenas um arquivo ou uma pasta com arquivos.
 
 _Derivações_ podem ter dependências em outras _derivações_, o que gera um efeito cascata. Se `a` depende de `b` e `a` for realizada primeiro o Nix realizará `b` e então realizará `a`. Este conceito de dependência é aplicado para substituir o [comportamento de _hashmap_](analogia-hashmap-arvore.md) de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore.
