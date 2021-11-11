@@ -33,4 +33,4 @@ Experimente expressões como a seguinte:
 No nixpkgs são usados dois tipos de overrides nos pacotes.
 
 - O `override` muda os parâmetros da função que é definida seguindo o design pattern `[inputs](./inputs.md)`.
-- O `overrideAttrs` muda os parâmetros passados para a função primitiva que gera a derivation, chamada de `mkDerivation`.
+- O `overrideAttrs` muda os parâmetros passados para a função primitiva que gera a derivação, chamada de `mkDerivation`.

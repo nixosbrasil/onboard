@@ -4,7 +4,7 @@ Nix é uma ferramenta que aplica conceitos e questões da programação funciona
 
 Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja algo bem mais generalizável.
 
-O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que muda totalmente o jogo: O conceito de _derivation_.
+O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que muda totalmente o jogo: O conceito de derivação.
 
-Derivation é um dos tipos de dados da linguagem Nix que vai ser melhor abordado na seção de **Tipos de dados**.
+Derivação é um dos tipos de dados da linguagem Nix que vai ser melhor abordado na seção de **Tipos de dados**.
 

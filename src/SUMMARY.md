@@ -12,7 +12,7 @@
     - [Lista](./tipos-de-dados/listas.md)
     - [Attrset](./tipos-de-dados/attrsets.md)
     - [Função](./tipos-de-dados/funcoes.md)
-    - [Derivation](./tipos-de-dados/derivations.md)
+    - [Derivação](./tipos-de-dados/derivacoes.md)
 - [Expressões](./expressoes/index.md)
     - [Let](./expressoes/let.md)
     - [Inherit](./expressoes/inherit.md)
@@ -25,7 +25,7 @@
     - [inputs](./design-patterns/inputs.md)
     - [callPackage](./design-patterns/callPackage.md)
     - [override](./design-patterns/override.md)
-- [Lei da Derivation](./lei-da-derivation.md)
+- [Lei da Derivação](./lei-da-derivacao.md)
 - [Analogia: hashmap vs árvore](./analogia-hashmap-arvore.md)
 
 ---

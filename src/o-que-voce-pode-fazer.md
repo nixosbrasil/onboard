@@ -10,7 +10,7 @@
 
 - Virtualização de programas apenas se o usuário desejar. Containers e VMs são virtualizados por via de regra, mesmo que containers não virtualizem o hardware. (tudo pode ser executado diretamente)
 
-- Aproveitar dependências comuns entre programas sem gerar duplicidade de exatamente a mesma coisa. (derivations podem ter dependências em comum)
+- Aproveitar dependências comuns entre programas sem gerar duplicidade de exatamente a mesma coisa. (derivações podem ter dependências em comum)
 
 - Deduplicação a nível de arquivo dos arquivos gerados e baixados pelo Nix. (nix-store --optimize)
 
@@ -22,4 +22,4 @@
 
 - Compilar o Android do seu celular. ([robotnix](https://github.com/danielfullmer/robotnix))
 
-- Transformar basicamente qualquer tipo de arquivo em qualquer outro tipo contanto que obedeça a [lei da derivation](lei-da-derivation.md)
+- Transformar basicamente qualquer tipo de arquivo em qualquer outro tipo contanto que obedeça a [lei da derivação](lei-da-derivacao.md)

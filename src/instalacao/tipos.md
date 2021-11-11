@@ -20,4 +20,4 @@ Quando um usuário do sistema usa o Nix, operações que lidam com a Nix store, 
 
 Por ser um tanto mais crítica essa questão de segurança apenas usuários confiáveis e usuários pertencentes a grupos confiáveis podem realizar tarefas mais administrativas como especificar caches binários.
 
-Apesar das restrições, usuários normais podem realizar derivations, e consequentemente, instalar pacotes e ambientes sem precisar de alguma permissão administrativa.
+Apesar das restrições, usuários normais podem realizar derivações, e consequentemente, instalar pacotes e ambientes sem precisar de alguma permissão administrativa.

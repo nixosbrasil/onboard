@@ -14,8 +14,8 @@ Para utilizar as definições que usam este design pattern é usada a função `
 ```nix
 let
   pkgs = import <nixpkgs> {};
-  mkDerivation = import ./autotools.nix pkgs;
-in mkDerivation {
+  mkDerivação = import ./autotools.nix pkgs;
+in mkDerivação {
   name = "graphviz";
   src = ./graphviz-2.38.0.tar.gz;
   buildInputs = with pkgs; [ gd fontconfig libjpeg bzip2 ];
@@ -23,9 +23,9 @@ in mkDerivation {
 ```
 ### Depois da aplicação do design pattern
 ```nix
-{ mkDerivation, gdSupport ? true, gd, fontconfig, libjpeg, bzip2 }:
+{ mkDerivação, gdSupport ? true, gd, fontconfig, libjpeg, bzip2 }:
 
-mkDerivation {
+mkDerivação {
   name = "graphviz";
   src = ./graphviz-2.38.0.tar.gz;
   buildInputs = if gdSupport then [ gd fontconfig libjpeg bzip2 ] else [];
