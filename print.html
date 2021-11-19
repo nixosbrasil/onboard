@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="o-que-voce-pode-fazer.html">O que você pode fazer</a></li><li class="chapter-item "><a href="instalacao/index.html">Instalação</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="instalacao/problemas-conhecidos.html">Problemas conhecidos</a></li><li class="chapter-item "><a href="instalacao/tipos.html">Tipos de instalação</a></li><li class="chapter-item "><a href="instalacao/comandos.html">Comandos para instalação</a></li></ol></li><li class="chapter-item "><a href="tipos-de-dados/index.html">Tipos de dados</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tipos-de-dados/numericos.html">Numérico</a></li><li class="chapter-item "><a href="tipos-de-dados/textuais.html">Textual</a></li><li class="chapter-item "><a href="tipos-de-dados/listas.html">Lista</a></li><li class="chapter-item "><a href="tipos-de-dados/attrsets.html">Attrset</a></li><li class="chapter-item "><a href="tipos-de-dados/funcoes.html">Função</a></li><li class="chapter-item "><a href="tipos-de-dados/derivacoes.html">Derivação</a></li></ol></li><li class="chapter-item "><a href="expressoes/index.html">Expressões</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="expressoes/let.html">Let</a></li><li class="chapter-item "><a href="expressoes/inherit.html">Inherit</a></li><li class="chapter-item "><a href="expressoes/with.html">With</a></li></ol></li><li class="chapter-item "><a href="como-pensar-em-nix/index.html">Como pensar em Nix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="como-pensar-em-nix/avaliacao-preguicosa.html">Avaliação preguiçosa</a></li><li class="chapter-item "><a href="como-pensar-em-nix/recursoes.html">Recursões</a></li></ol></li><li class="chapter-item "><a href="design-patterns/index.html">Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design-patterns/funcoes.html">Funções</a></li><li class="chapter-item "><a href="design-patterns/inputs.html">inputs</a></li><li class="chapter-item "><a href="design-patterns/callPackage.html">callPackage</a></li><li class="chapter-item "><a href="design-patterns/override.html">override</a></li></ol></li><li class="chapter-item "><a href="lei-da-derivacao.html">Lei da Derivação</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li><li class="spacer"></li><li class="chapter-item "><a href="externo/index.html">Externo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/awesome-nix.html">Awesome Nix</a></li><li class="chapter-item "><a href="externo/digital-gardens/index.html">Digital Gardens</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/digital-gardens/freire.html">Victor Freire</a></li></ol></li><li class="chapter-item "><a href="externo/dotfiles/index.html">Dotfiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/dotfiles/lucasew.html">lucasew</a></li></ol></li><li class="chapter-item "><a href="externo/extra.html">Referências externas adicionais</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -139,23 +139,334 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introdução"><a class="header" href="#introdução">Introdução</a></h1>
-<p>Nix é uma ferramenta que aplica conceitos e questões da programação funcional em transformação de arquivos.
-Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja mais.</p>
-<p>O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que
-muda totalmente o jogo: O conceito de <em>derivation</em>.</p>
-<h1 id="o-que-são-derivations"><a class="header" href="#o-que-são-derivations">O que são <em>derivations</em>?</a></h1>
-<p><em>Derivation</em> é o conceito de funções puras aplicadas a arquivos. A forma tradicional é utilizando a memória RAM.</p>
-<p>Linguagens de programação geralmente usam um espaço de heap em que alocam memória para os objetos em blocos, nas <em>derivations</em> o espaço alocado é na <em>nix-store</em>, que geralmente se localiza na pasta <code>/nix/store</code>. Cada objeto é um item nessa pasta.</p>
+<p>Nix é uma ferramenta que aplica conceitos e questões da programação funcional em transformação de arquivos.</p>
+<p>Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja algo bem mais generalizável.</p>
+<p>O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que muda totalmente o jogo: O conceito de derivação.</p>
+<p>Derivação é um dos tipos de dados da linguagem Nix que vai ser melhor abordado na seção de <strong>Tipos de dados</strong>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="o-que-eu-posso-fazer"><a class="header" href="#o-que-eu-posso-fazer">O que eu posso fazer?</a></h1>
+<ul>
+<li>
+<p>Configurar ambientes de desenvolvimento e produção de forma automatizada e totalmente customizável sem ter que fazer gambiarras que não seriam automaticamente replicáveis quando for utilizar em uma outra máquina. (nix-shell, nix develop)</p>
+</li>
+<li>
+<p>Executar programas sem ter que instala-los globalmente primeiro. (nix-shell, nix run, nix develop)</p>
+</li>
+<li>
+<p>Executar o mesmo programa em versões diferentes sem que haja um conflito em relação ao local de instalação dos mesmos.</p>
+</li>
+<li>
+<p>Definir diretamente nos scripts as dependências destes que serão baixadas logo antes de executar os scripts. (shebang do nix-shell)</p>
+</li>
+<li>
+<p>Virtualização de programas apenas se o usuário desejar. Containers e VMs são virtualizados por via de regra, mesmo que containers não virtualizem o hardware. (tudo pode ser executado diretamente)</p>
+</li>
+<li>
+<p>Aproveitar dependências comuns entre programas sem gerar duplicidade de exatamente a mesma coisa. (derivações podem ter dependências em comum)</p>
+</li>
+<li>
+<p>Deduplicação a nível de arquivo dos arquivos gerados e baixados pelo Nix. (nix-store --optimize)</p>
+</li>
+<li>
+<p>Replicação de coisas repetitivas em configurações se baseando em alguma outra coisa (<a href="https://github.com/lucasew/nixcfg/blob/d7597a5288ee9b9e766ec18bfc874ad80a7e885c/homes/main/default.nix#L58">exemplo do módulo do espanso</a>)</p>
+</li>
+<li>
+<p>Distribuição Linux que pode ser totalmente declarativa, sem precisar refazer os passos da configuração em uma nova máquina. (<a href="https://nixos.org/">NixOS</a>)</p>
+</li>
+<li>
+<p>Wrappers customizados de programas já trazendo plugins e configuração. (<a href="https://github.com/lucasew/nix-vscode">nix-vscode</a>, <a href="https://github.com/lucasew/nixcfg/blob/d7597a5288ee9b9e766ec18bfc874ad80a7e885c/packages/custom/neovim/default.nix">Neovim lucasew</a>)</p>
+</li>
+<li>
+<p>Compilar o Android do seu celular. (<a href="https://github.com/danielfullmer/robotnix">robotnix</a>)</p>
+</li>
+<li>
+<p>Transformar basicamente qualquer tipo de arquivo em qualquer outro tipo contanto que obedeça a <a href="lei-da-derivacao.html">lei da derivação</a></p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="instalação"><a class="header" href="#instalação">Instalação</a></h1>
+<p>A instalação do Nix é feita usando a técnica de curlbash, não é necessário adicionar um repositório na sua distro.</p>
+<p>Você cola um comando no terminal e deixa executando.</p>
+<p>Quando o script terminar o Nix já vai estar pronto para uso sem ser necessário reiniciar o computador.</p>
+<p>Para desinstalar o Nix por completo apenas é necessário apagar a /nix e está feito!</p>
+<p>Ao realizar a instalação o Nix criará um conjunto de usuários no seu sistema, estes usuários são necessários para o Nix conseguir garantir o isolamento das transformações.</p>
+<p><strong>Não execute a instalação como usuário root, o script de instalação usará o sudo quando for necessário!</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="problemas-conhecidos"><a class="header" href="#problemas-conhecidos">Problemas conhecidos</a></h1>
+<ul>
+<li>Usuários de distros baseadas em Red Hat como o Fedora, por exemplo, utilizam um módulo de segurança chamado SELinux, e esse módulo dá problema com o Nix. É aconselhavel desativa-lo. Pode ser que este problema já esteja resolvido quando você ler este manual.</li>
+<li>A primeira versão do WSL não é suportada, use WSL 2!</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tipos-de-instalação"><a class="header" href="#tipos-de-instalação">Tipos de instalação</a></h1>
+<p>No Nix existem dois tipos de instalação e a diferença dos dois, além do comando de instalação, está no modelo de segurança empregado.</p>
+<h2 id="single-user-mode"><a class="header" href="#single-user-mode">Single user mode</a></h2>
+<p>Ou usuário único, apenas um usuário pode operar o Nix na máquina. É o jeito padrão apresentado no <a href="https://nixos.org/download.html">site</a>. Por padrão é o usuário que está chamando o instalador. É mais simples mas se mais de um usuário na máquina utilizar, o modelo de multiusuário é mais indicado.</p>
+<p>A /nix no modo de um usuário é atribuída ao usuário que instalou.</p>
+<h2 id="multi-user-mode"><a class="header" href="#multi-user-mode">Multi user mode</a></h2>
+<p>Ou modo de multiusuário, permite que mais de um usuário no sistema possa utilizar o Nix.</p>
+<p>Para permitir que uma Nix store seja compartilhada de forma segura entre usuários é importante que usuários não possam rodar builders que alterem a Nix store e o banco de dados do Nix de forma arbitrária porque se puderem poderiam instalar um trojan (cavalo de troia), por exemplo, no sistema e comprometer as contas dos outros usuários.</p>
+<p>Para evitar este problema a Nix store e o banco de dados são atribuídos a um usuário privilegiado, geralmente o root, e os builders são executados por usuários especiais, geralmente chamados de nixbld1, nixbld2 e assim por diante.</p>
+<p>Quando um usuário do sistema usa o Nix, operações que lidam com a Nix store, como realizações, são enviadas para um daemon do Nix executando na máquina.</p>
+<p>Por ser um tanto mais crítica essa questão de segurança apenas usuários confiáveis e usuários pertencentes a grupos confiáveis podem realizar tarefas mais administrativas como especificar caches binários.</p>
+<p>Apesar das restrições, usuários normais podem realizar derivações, e consequentemente, instalar pacotes e ambientes sem precisar de alguma permissão administrativa.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comandos-para-instalação"><a class="header" href="#comandos-para-instalação">Comandos para instalação</a></h1>
+<p>Os comandos aqui apresentados foram testados em uma distribuição Ubuntu 20.04.3 LTS executando como uma VM do Virt Manager.</p>
+<p>O autor já conseguiu instalar com sucesso no Linux Mint Mate 20 e em uma instalação de 2017 do Debian 9.</p>
+<p>Apenas o Debian 9 possui ressalvas pois não estava atualizado o que fazia este apresentar erros de certificado SSL, que podem ser ignorados passando o parâmetro <code>-k</code> no comando curl.</p>
+<p>Relembrando: <strong>Não execute os seguintes comandos logado como usuário root</strong></p>
+<p>FUN FACT: Para as demonstrações em imagem foram instalados apenas o curl, o openssh-server e o tmux em uma instalação Ubuntu recém feita. Entre estas dependências apenas o curl é obrigatório pois o virt-manager por padrão não faz integração de área de transferência então foi-se usado uma sessão tmux e ssh para poder colar em um terminal fora da VM.</p>
+<h2 id="instalação-single-user"><a class="header" href="#instalação-single-user">Instalação single user</a></h2>
+<pre><code class="language-sh">curl -L https://nixos.org/nix/install | sh
+</code></pre>
+<p><img src="instalacao/../assets/instalacao-single-user.png" alt="Instalação single user" /></p>
+<h2 id="instalação-multiuser"><a class="header" href="#instalação-multiuser">Instalação multiuser</a></h2>
+<pre><code class="language-sh">curl -L https://nixos.org/nix/install | bash -s -- --daemon
+</code></pre>
+<p><img src="instalacao/../assets/instalacao-multi-user.png" alt="Instalação multiuser" /></p>
+<h2 id="considerações-extra"><a class="header" href="#considerações-extra">Considerações extra</a></h2>
+<p>O instalador vai fornecer bastante informação do que está acontecendo e se você baixar o script e chamar com o bash depois de baixado ele até vai pedir algumas confirmações. Você pode usar isso ao seu favor e de repente encontrar algum tópico que nunca viu na vida para pesquisar.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tipos-de-dados"><a class="header" href="#tipos-de-dados">Tipos de dados</a></h1>
+<p>Linguagens de programação expressam algum tipo de cálculo e para expressar esse cálculo podem implementar primitivas de funções, tipos de dados básicos, entrada e saída entre outros.</p>
+<p>O Nix é uma linguagem de programação de paradigma funcional, onde imutabilidade de objetos é regra, funções são os tijolos para construir a casa que é o programa.</p>
+<p>Os tipos básicos da linguagem podem ser os seguintes:</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="numéricos"><a class="header" href="#numéricos">Numéricos</a></h1>
+<p>Inteiro e ponto flutuante e podem ser operados por operações aritméticas assim como é em outras linguagens.</p>
+<pre><code class="language-nix">let
+    a = 2;
+    b = 2;
+in a + b
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="textuais"><a class="header" href="#textuais">Textuais</a></h1>
+<p>Strings, assim como em outras linguagens.</p>
+<p>Strings podem ser declaradas entre aspas (<code>&quot;</code>) ou entre duas aspas simples (<code>''</code>). </p>
+<p>As duas suportam mais de uma linha, a conveniência da sintaxe com duas aspas simples é lidar com conflitos ao escrever scripts. Aspas duplas são muito usadas no Shell Script e um caso de uso comum é usar o Nix para gerar scripts customizados.</p>
+<p>Para juntar duas strings é possível somar ou interpolar elas.</p>
+<pre><code class="language-nix">let
+    str_a = &quot;hello&quot;;
+    str_b = &quot;world&quot;;
+in {
+    str_soma = str_a + str_b; # &quot;helloworld&quot;;
+    str_interpolacao = &quot;${str_a} ${str_b}&quot;;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="listas"><a class="header" href="#listas">Listas</a></h1>
+<p>Uma sequência de valores que podem ter tipos diferentes.</p>
+<p>Assim como os attrsets, listas não podem ser modificadas depois de declaradas.</p>
+<p>Para juntar duas listas é usado o operador <code>++</code>.</p>
+<pre><code class="language-nix">let
+    a = [ 1 2 3 ];
+    b = [ 4 5 6 ];
+in a ++ b
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="attrsets"><a class="header" href="#attrsets">Attrsets</a></h1>
+<p>Equivalentes a objetos do Javascript ou dicionários do Python, porém não podem ser modificados depois de declarados.</p>
+<p>Para juntar dois attrsets é usado o operador <code>//</code>.</p>
+<pre><code class="language-nix">let
+    a = { linguagem = &quot;Nix&quot;; };
+    b = { versao = &quot;2.4&quot;; };
+in a // b
+</code></pre>
+<p>Também é possível especificar attrsets aninhados usando duas formas que podem ser interutilizadas sem problemas.</p>
+<pre><code class="language-nix">let
+    a = {
+        linguagem.nome = &quot;Nix&quot;;
+        linguagem.versao = &quot;2.4&quot;;
+    };
+    b = {
+        linguagem = {
+            nome = &quot;Nix&quot;;
+            versao = &quot;2.4&quot;;
+        };
+    };
+in {
+    inherit a b;
+};
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="funções"><a class="header" href="#funções">Funções</a></h1>
+<p>Mesma ideia de outras linguagens. Perceba que não é possível alterar uma variável global por exemplo. Funções no Nix são <a href="https://pt.stackoverflow.com/questions/255557/o-que-%C3%A9-uma-fun%C3%A7%C3%A3o-pura">puras</a> por definição. Ao passar um dado valor constante para uma função esta tem que retornar um outro valor constante, que pode ser o mesmo valor da entrada como é com a <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_identidade">função identidade</a>.</p>
+<p>No Nix as funções podem ter apenas um parâmetro e para ter o comporamento de funções de mais de um parâmetro é necessário definir uma função que retorna uma outra função que pega o próximo parâmetro.</p>
+<p>Esta característica permite <a href="https://www.agatetepe.com.br/js-funcional-5-aplicacao-parcial-currying/">aplicação parcial e currying</a> por padrão.</p>
+<pre><code class="language-nix">let
+    sum = x: y: x + y;
+in sum 2 2
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="derivações"><a class="header" href="#derivações"><em>Derivações</em></a></h1>
+<p><em>Derivação</em> é o conceito de funções puras aplicadas a arquivos. A forma tradicional é utilizando a memória RAM.</p>
+<p>Linguagens de programação geralmente usam um espaço de memória alocado dinamicamente para guardar os objetos em blocos, nas <em>derivações</em> o espaço alocado é na <em>nix-store</em>, que geralmente se localiza na pasta <code>/nix/store</code>. Cada objeto é um item nessa pasta.</p>
 <p>Os itens dessa pasta podem ser classificados em dois tipos:</p>
 <ul>
-<li><em>Derivations</em>: aqueles arquivos de extensão <code>drv</code> que são basicamente especificações mastigadas para realizar as transformações 
-em uma <em>derivation</em></li>
-<li><em>Realizations</em>: o processo de transformar uma definição no objeto em sí é chamado de realization, esses caminhos são gerados
-dos <code>drv</code> ou baixados de caches.</li>
+<li><em>Derivações</em>: aqueles arquivos de extensão <code>drv</code> que são basicamente especificações mastigadas para realizar as transformações.
+em uma derivação</li>
+<li><em>Closures</em>: outros arquivos e pastas, o produto final.</li>
 </ul>
-<p>As <em>realizations</em> podem ser apenas um arquivo ou uma pasta com arquivos.</p>
-<p><em>Derivations</em> podem ter dependências em outras <em>derivations</em> o que gera um efeito cascata. Se <code>a</code> depende de <code>b</code> e <code>a</code> for realizada primeiro o Nix realizará <code>b</code> e então realizará <code>a</code>. Este conceito de dependência é aplicado para substituir o comportamento de <em>hashmap</em> de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore. Esta analogia será melhor explicada em breve.</p>
+<p>O processo de transformar uma derivação em uma closure é chamado de realização, esses caminhos são gerados
+dos <code>drv</code> ou baixados de caches se disponível.</p>
+<p><img src="tipos-de-dados/../assets/grafo-derivation-closure.png" alt="um diagrama para esclarecer um tanto melhor" /></p>
+<p>As <em>closures</em> podem ser apenas um arquivo ou uma pasta com arquivos.</p>
+<p><em>Derivações</em> podem ter dependências em outras <em>derivações</em>, o que gera um efeito cascata. Se <code>a</code> depende de <code>b</code> e <code>a</code> for realizada primeiro o Nix realizará <code>b</code> e então realizará <code>a</code>. Este conceito de dependência é aplicado para substituir o <a href="tipos-de-dados/analogia-hashmap-arvore.html">comportamento de <em>hashmap</em></a> de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore.</p>
 <p>O resto basicamente aproveita esta base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="expressões"><a class="header" href="#expressões">Expressões</a></h1>
+<p>Linguagens de programação possuem sintaxe e semântica, e o Nix não é diferente.</p>
+<p>A linguagem possui várias construções sintáticas para agilizar as iterações com código.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="let"><a class="header" href="#let">Let</a></h1>
+<p>Uma das expressões mais úteis do Nix. Especialmente importante quando existe mais de uma operação na mesma linha e permite que uma operação seja feita em estágios, assim como pode ser usada como um bloco de escopo.</p>
+<p>Na essência é como se fosse um attr, tem comportamento de attr, não permite loops de refência assim como attrsets porém o objetivo é construção do escopo local.</p>
+<p>O modelo mental para entender a ideia é pensar tipo como teoremas são estruturados. Por exemplo:</p>
+<blockquote>
+<p>Seja x igual a 2 e y igual a 2, x somado a y resulta em ...</p>
+</blockquote>
+<p>Em let expressions é</p>
+<pre><code class="language-nix">let
+    x = 2;
+    y = 2;
+in x + y
+</code></pre>
+<p>Let, em conjunto com inherit e with pode ser usado para importar elementos para o escopo atual e estas capacidades serão abordadas logo em seguida.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inherit"><a class="header" href="#inherit">Inherit</a></h1>
+<p>Provavelmente o que você está pensando é algo relacionado a herança e talvez esteja fazendo o link com linguagens orientadas a objeto. Na verdade o inherit é um <a href="https://pt.wikipedia.org/wiki/A%C3%A7%C3%BAcar_sint%C3%A1tico">açucar sintático</a> para trazer membros de um outro escopo para o escopo atual.</p>
+<p>Funciona apenas com attrsets e expressões let, que são as formas que são usadas para implementar escopos em Nix, e pode ser expresso de algumas formas diferentes:</p>
+<pre><code class="language-nix"># Traz um valor do escopo atual para dentro do attr
+{ inherit builtins; }
+
+# Traz um membro de um attrset no escopo para dentro do attrset atual
+{ inherit (builtins) fetchTarball map; }
+
+# Exemplo usando expressões let
+let
+    inherit (builtins) sort;
+    compara = a: b: a &gt; b;
+in sort compara [3 2 5 19 22 (-2)]
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="with"><a class="header" href="#with">With</a></h1>
+<p>Uma outra forma de trazer itens de outros escopos para o atual é o with. Fazendo o link com o Python, seria um equivalente a um <code>from x import *</code>.</p>
+<p>Esta primitiva não pode ser usada como um valor mas sim como um prefixo para uma expressão que depende desse escopo repassado.</p>
+<h2 id="exemplo"><a class="header" href="#exemplo">Exemplo</a></h2>
+<p>With não pode ser usado dentro de attrsets e let expressions como valor.</p>
+<pre><code class="language-nix">{ with builtins; } # Não funciona
+let with builtins; in head # Não funciona
+</code></pre>
+<p>Se o usuário quer juntar um attrset especificado com outro pode usar o operador <code>//</code>!.</p>
+<p>Traz o escopo builtins para o escopo da expressão em seguida que acessa o item head, que implicitamente referencia <code>builtins.head</code></p>
+<pre><code class="language-nix">with builtins; head
+</code></pre>
+<h2 id="aviso"><a class="header" href="#aviso">Aviso</a></h2>
+<p>With tem uso desencorajado, principalmente no topo de arquivo pois impossibilita a análise estática da linguagem, resultando em erros mais genéricos e difíceis de resolver. Um código evitando withs tende a ser um código mais fácil de manter no longo prazo.</p>
+<p>Um jeito comum de lidar com isso é usar uma let expression com inherits trazendo apenas o necessário dos escopos. No nixpkgs isso é bem evidente e existem vários exemplos reais bem simples de entender na pasta <code>lib</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="como-pensar-em-nix"><a class="header" href="#como-pensar-em-nix">Como pensar em Nix</a></h1>
+<p>Linguagens funcionais têm uma correlação bem marcante com conceitos matemáticos e Nix aplica esses conceitos em um domínio peculiar comparado com outras linguagens funcionais.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="avaliação-preguiçosa"><a class="header" href="#avaliação-preguiçosa">Avaliação preguiçosa</a></h1>
+<p>Nix, assim como linguagens como Haskell, possui avaliação preguiçosa, ou seja, os valores só são calculados quando acessados. Isso permite que o Nix só calcule expressões se estas forem pedidas.</p>
+<p>Você pode imaginar um código Nix executando da mesma forma que imaginaria uma expressão matemática.</p>
+<p>O Nix avalia as expressões de dentro para fora e é possível manipular esta ordem com parênteses por exemplo. Se a expressão não é referenciada ela não é executada.</p>
+<p>Diferentemente de linguagens como Javascript e Python não é necessário encapsular um câlculo em uma função para ter este comporamento.</p>
+<p>Pensa num código Nix como uma expressão matemática se abrindo e resolvendo de dentro para fora, se tal parte da expressão não é utilizada ela não vai ser calculada. Isso pode ser um tanto inconveniente para busca de erros pois um código só pode dar erro se for executado mas é essencial para o domínio que o Nix atende. Se Nix não fosse de avaliação preguiçosa todos teriam que baixar ou compilar o indice completo de definições de programas (nixpkgs) para poder usar qualquer coisa e isso definitivamente não seria legal.</p>
+<h2 id="exemplo-1"><a class="header" href="#exemplo-1">Exemplo</a></h2>
+<pre><code class="language-nix">let
+    a = 2 + 2;
+    b = 4 + 4; # não é avaliado
+in a
+</code></pre>
+<p>Esta lógica funciona desde expressões que começam no mesmo arquivo, até em valores que são gerados no decorrer de centenas ou mais de arquivos como é com o nixpkgs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recursões"><a class="header" href="#recursões">Recursões</a></h1>
+<p>Assim como em outras linguagens funcionais, recursão é um padrão muito comum nos códigos e esta também acontece no Nix.</p>
+<p>A recursão por definição precisa ter uma condição de parada e um passo recursivo. Se a condição de parada nunca para então tem-se um loop infinito e isso no Nix é um erro fatal e definitivamente o erro mais chato de se lidar da linguagem pois geralmente não é trivial rastrear a causa mas é possível replicar em exemplos simples como o seguinte:</p>
+<pre><code class="language-nix">let
+    a = 2 + b;
+    b = a + 1;
+in a # pode ser o b também
+</code></pre>
+<p>Por Nix ser uma linguagem de avaliação preguiçosa meio que existe uma chamada de função implícita ao se acessar um valor e se acontece de ter um ciclo dá um problema conhecido como estouro de pilha, ou stack overflow.</p>
+<p>Existem técnicas para evitar esses loops infinitos como os design patterns <a href="como-pensar-em-nix/../design-patterns/callPackage.html">callPackage</a> e <a href="como-pensar-em-nix/../design-patterns/inputs.html">inputs</a> e evitar o uso do <a href="como-pensar-em-nix/../expressoes/with.html">with</a> no topo do arquivo.</p>
+<p>Além de reduzir a possibilidade de loops, técnicas assim permitem que loops sejam diagnosticados de uma forma bem mais simples.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="design-patterns"><a class="header" href="#design-patterns">Design Patterns</a></h1>
+<p>São padrões usados em código Nix</p>
+<p>A versão original destes pode ser encontrada em inglês no <a href="https://nixos.org/guides/nix-pills/">Nix Pills</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="funções-1"><a class="header" href="#funções-1">Funções</a></h1>
+<p><img src="design-patterns/../assets/functional_programming_design_patterns.avif" alt="São funções mesmo" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inputs"><a class="header" href="#inputs">inputs</a></h1>
+<p>Definições mais dentro do repositório devem evitar importar outros arquivos.</p>
+<p>Porque? Loops!</p>
+<p>E também porque não fica com um aspecto tão limpo.</p>
+<p>Para utilizar as definições que usam este design pattern é usada a função <code>callPackage</code> do nixpkgs!</p>
+<h2 id="exemplo-2"><a class="header" href="#exemplo-2">Exemplo</a></h2>
+<h3 id="antes-da-aplicação-do-design-pattern"><a class="header" href="#antes-da-aplicação-do-design-pattern">Antes da aplicação do design pattern</a></h3>
+<pre><code class="language-nix">let
+  pkgs = import &lt;nixpkgs&gt; {};
+  mkDerivação = import ./autotools.nix pkgs;
+in mkDerivação {
+  name = &quot;graphviz&quot;;
+  src = ./graphviz-2.38.0.tar.gz;
+  buildInputs = with pkgs; [ gd fontconfig libjpeg bzip2 ];
+}
+</code></pre>
+<h3 id="depois-da-aplicação-do-design-pattern"><a class="header" href="#depois-da-aplicação-do-design-pattern">Depois da aplicação do design pattern</a></h3>
+<pre><code class="language-nix">{ mkDerivação, gdSupport ? true, gd, fontconfig, libjpeg, bzip2 }:
+
+mkDerivação {
+  name = &quot;graphviz&quot;;
+  src = ./graphviz-2.38.0.tar.gz;
+  buildInputs = if gdSupport then [ gd fontconfig libjpeg bzip2 ] else [];
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="callpackage"><a class="header" href="#callpackage">callPackage</a></h1>
+<p>Utilizando o design pattern <code>inputs</code> é necessário uma forma de acessar a definição no nível acima e é aí que entra a função <code>callPackage</code>.</p>
+<p>Esta função consegue desmontar a função definida na definição usando o design pattern input passando valores padrão herdados do nixpkgs sendo utilizado e permite que sejam passados parâmetros extra, inclusive, sobrescrevendo os parâmetros originais.</p>
+<p>A função <code>callPackage</code> pode ser deduzida da seguinte forma:</p>
+<p>Sendo</p>
+<ul>
+<li><code>set</code> o attrset de entrada que contêm os valores padrões</li>
+<li><code>f</code> a função importada da expressão usando o design pattern inputs</li>
+<li><code>overrides</code> um attrset com valores que serão alterados da entrada</li>
+</ul>
+<pre><code class="language-nix">callPackage = set: f: overrides: f ((builtins.intersectAttrs (builtins.functionArgs f) set) // overrides)
+</code></pre>
+<p>A versão do nixpkgs possui um comportamento levemente diferente.</p>
+<ul>
+<li>A função definida acima recebe como parâmetro <code>f</code> uma função que é a expressão utilizando o design pattern inputs</li>
+<li>A função do nixpkgs ao invés de uma função recebe um caminho para um arquivo nix, ou uma pasta, e realiza o import antes.</li>
+<li>A função acima recebe a função diretamente e a do nixpkgs recebe um caminho para o arquivo que importado entrega a função.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="override"><a class="header" href="#override">override</a></h1>
+<p>Uma forma de gerar uma nova attrset utilizando partes da attrset anterior. </p>
+<p>Muito comum em customizações de programas já definidos, como por exemplo usar a definição fornecida pelo Nixpkgs do kernel Linux e com isso poder passar modificações para este de uma forma que o usuário não seja obrigado a adotar essa definição ou acabar tendo surpresas pelo gerenciador de pacotes da distribuição ter sobrescrito aquele pacote modificado pelo padrão.</p>
+<p>Essa abordagem pode inclusive funcionar com alterações vindo de novas versões do Nixpkgs passando sempre um mesmo patch no código de entrada.</p>
+<p>E o princípio por trás desta técnica está em attrsets que podem ser recriadas passando um conjunto de alterações e a técnica é chamada de override.</p>
+<p>Overrides podem ser implementados como funções e uma forma de deduzir é:</p>
+<pre><code>let
+    makeOverridable = f: origArgs:
+        let
+            origRes = f origArgs;
+        in
+            origRes // { override = newArgs: makeOverridable f (origArgs // newArgs); };
+in makeOverridable (v: v) {}
+</code></pre>
+<p>Neste caso a expressão vai retornar um attrset com um item <code>override</code> com uma função.</p>
+<p>Para poder experimentar as possibilidades abra o <code>nix-repl</code> pelo terminal e digite <code>v = </code> seguido do código acima, o resultado da expressão vai ficar na variável v.</p>
+<p>Experimente expressões como a seguinte:</p>
+<pre><code class="language-nix">(v.override {hello = &quot;world&quot;;}).override {foo = &quot;bar&quot;;}
+</code></pre>
+<h2 id="aviso-1"><a class="header" href="#aviso-1">Aviso</a></h2>
+<p>No nixpkgs são usados dois tipos de overrides nos pacotes.</p>
+<ul>
+<li>O <code>override</code> muda os parâmetros da função que é definida seguindo o design pattern <code>[inputs](./inputs.md)</code>.</li>
+<li>O <code>overrideAttrs</code> muda os parâmetros passados para a função primitiva que gera a derivação, chamada de <code>mkDerivation</code>.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lei-da-derivação"><a class="header" href="#lei-da-derivação">Lei da <code>Derivação</code></a></h1>
+<p>Seja</p>
+<ul>
+<li>uma derivação D(a, b, c, ...) = z que transforma as entradas em z.</li>
+<li>uma <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash">função de hash</a> H(x) que calcula um hash de algum x, pode ser por exemplo a <a href="https://pt.wikipedia.org/wiki/SHA-2">SHA256</a>.</li>
+</ul>
+<p>Uma <code>realização</code> de uma <code>derivação</code> precisa:</p>
+<ul>
+<li>Para ter acesso a internet: H(z) pré-definido</li>
+<li>Para conseguir executar sem H(z) definido: a definição de todas as derivações de entrada já em formato de closure, ou seja, executadas e acessíveis através da nix store.</li>
+</ul>
+<h1 id="exemplos"><a class="header" href="#exemplos">Exemplos</a></h1>
+<ul>
+<li>Derivações que baixam coisas da internet para poderem realizar este trabalho DEVEM ter o hash do arquivo baixado definido junto.</li>
+<li>Para compilar o Python é necessário um compilador de C, como por exemplo o GCC. Não é possível <em>realizar</em> a derivação do Python sem um compilador assumindo que a derivação do Python não vai baixar do cache.</li>
+<li>É possível usar o Nix para conversão de vídeos e para realizar a conversão em sí é necessário, por exemplo, um programa chamado <a href="https://ffmpeg.org/">ffmpeg</a>. Se a derivação do ffmpeg ainda não estiver realizada em uma closure não é possível iniciar a conversão.</li>
+<li>A closure de uma derivação pode ser exportada para outra máquina evitando assim que ela seja re-realizada, e é assim que caches binários funcionam.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="analogia-hashmap-vs-árvore"><a class="header" href="#analogia-hashmap-vs-árvore">Analogia: <em>hashmap</em> vs árvore</a></h1>
 <p>Em estrutura de dados busca-se formas de guardar dados na memória a fim de poder recuperá-los de forma mais eficiente. Não nos 
 aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
@@ -172,8 +483,57 @@ aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
 <p>A cada atualização de pacote esta biblioteca virava um arquivo diferente e, consequentemente, o polybar tinha que ser atualizado para procurar pelo novo nome. Mensalmente, quando eu atualizava, o polybar simplesmente se recusava de abrir e aí é que reside a analogia do <em>hashmap</em>.</p>
 <p>Quando um pacote é atualizado pelo pacman a versão nova é sobrescrita em cima da antiga e qualquer coisa que assuma algum detalhe de uma versão em específico vai quebrar, e esse é o perigo da mutabilidade.</p>
 <p>O Nix não tem esse problema.</p>
-<p>Ao invés do pacote polybar depender do jsoncpp, uma <em>derivation</em> que compilará o polybar dependerá da <em>derivation</em> que compila o jsoncpp. Caso o jsoncpp atualize, a <em>derivation</em> do polybar será alterada por consequência.</p>
+<p>Ao invés do pacote polybar depender do jsoncpp, uma derivação que compilará o polybar dependerá da derivação que compila o jsoncpp. Caso o jsoncpp atualize, a derivação do polybar será alterada por consequência.</p>
 <p><img src="assets/ex-nix-path-tese-nixos.png" alt="Exemplo que pode ser encontrado na tese sobre o NixOS" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="externo"><a class="header" href="#externo">Externo</a></h1>
+<p>Repositórios e ferramentas externas para complementar o aprendizado e a exploração.</p>
+<p>Quase todas as referências, se não todas, estão em inglês.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="awesome-nix"><a class="header" href="#awesome-nix">Awesome Nix</a></h1>
+<p>O <a href="https://github.com/nix-community/awesome-nix">Awesome Nix</a> é uma <a href="https://github.com/sindresorhus/awesome">Awesome List</a>.</p>
+<p>Possui links com ferramentas e outras referências do mundo Nix.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="digital-gardens"><a class="header" href="#digital-gardens">Digital Gardens</a></h1>
+<p>São bases de conhecimento mantidas por indivíduos e podem possuir dicas muito úteis para aprender alguma coisa nova.</p>
+<p><strong>Não são feitos para serem usados como referência</strong> mas podem trazer um ponto de vista diferente para o tópico abordado.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpsnotesvictorfreiredevvictor-freirea"><a class="header" href="#a-hrefhttpsnotesvictorfreiredevvictor-freirea"><a href="https://notes.victorfreire.dev/">Victor Freire</a></a></h1>
+<p>Digital garden desenvolvido usando uma customização baseada no mdbook, o mdzk. Possui artigos úteis como:</p>
+<ul>
+<li><a href="https://notes.victorfreire.dev/%F0%9F%92%AD%20Blog/Things%20I%20wish%20I%20knew%20before%20using%20Nix.html">Things I wish I knew before using Nix</a></li>
+<li><a href="https://notes.victorfreire.dev/Nix%20Anti-patterns.html">Nix Anti-patterns</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dotfiles"><a class="header" href="#dotfiles">Dotfiles</a></h1>
+<p>São repositórios Git usando provedores como o GitHub e o GitLab e que possuem arquivos de configuração e scripts pessoais usados pelos donos dos repositórios.</p>
+<p>Estes repositórios costumam ser públicos para todos e são muito úteis para aprender alguma forma diferente de organizar código Nix, assim como outros scripts utilitários que também podem estar presentes.</p>
+<p>Estes repositórios não costumam ser estáveis para uso no dia a dia porque são pessoais do dono destes porém são muito úteis para ganhar tempo <del>roubando</del> estudando código dos outros que pode ser alterado para satisfazer as suas necessidades.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="a-hrefhttpsgithubcomlucasewnixcfglucasewa"><a class="header" href="#a-hrefhttpsgithubcomlucasewnixcfglucasewa"><a href="https://github.com/lucasew/nixcfg/">lucasew</a></a></h1>
+<p>Possui</p>
+<ul>
+<li>Exemplo de definição usando home-manager (homes)</li>
+<li>Exemplo de definição de máquina usando NixOS (nodes)</li>
+<li>Exemplo de extensão de uma definição base (nodes/{bootstrap,common})</li>
+<li>Uso de flakes (flake.nix)</li>
+<li>Uma área de compat para facilitar referências usando o Nix sem flakes</li>
+<li>Funções utilitárias que são carregadas usando a funcionalidade de overlay</li>
+<li>Alguns programas que não estão no Nixpkgs empacotados por fora e acessíveis por overlay</li>
+<li>Gitignore na pasta secrets, onde ficam valores secretos como chaves de API, estes arquivos secretos não vão ser commitados junto com o resto do repositório</li>
+<li>Um arquivo authorized_keys com a chave pública das máquinas para autorizar facilmente em máquinas novas (authorized_keys)</li>
+<li>Um script para aplicar o formatador automático ao repositório (format.sh)</li>
+<li>Um arquivo nur.nix usado pelo bot do NUR para indexar o repositório</li>
+<li>Fundo da área de trabalho (wall.jpg)</li>
+<li>Configurações para poder usar o GitHub Actions para precompilar gerações depois de atualizar o Nixpkgs
+<ul>
+<li>Existem algumas customizações em alguns pacotes que são compiladas sempre que o nixpkgs é atualizado então antes de aplicar a geração localmente é chamado um job do Github Actions que compila a nova geração e manda para o Cachix, quando este job termina é aplicada a nova geração localmente e ao invés de compilar a estes pacotes modificados é apenas baixada a closure do Cachix.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="referências-externas-adicionais"><a class="header" href="#referências-externas-adicionais">Referências externas adicionais</a></h1>
+<h2 id="a-hrefhttpsnixosorgmanualnixstableintroductionhtmlmanual-do-nix-em-mdbooka"><a class="header" href="#a-hrefhttpsnixosorgmanualnixstableintroductionhtmlmanual-do-nix-em-mdbooka"><a href="https://nixos.org/manual/nix/stable/introduction.html">Manual do Nix em mdbook</a></a></h2>
+<p>Explica várias questões e features do Nix em sí. Não aborda nixpkgs ainda.</p>
+<h2 id="a-hrefhttpsnixdevnixdeva"><a class="header" href="#a-hrefhttpsnixdevnixdeva"><a href="https://nix.dev/">nix.dev</a></a></h2>
+<p>Um guia opinativo de como desenvolvedores podem fazer as suas tarefas usando Nix.</p>
+<h2 id="a-hrefhttpsnixoswikiwikimain_pagenixos-wikia"><a class="header" href="#a-hrefhttpsnixoswikiwikimain_pagenixos-wikia"><a href="https://nixos.wiki/wiki/Main_Page">NixOS Wiki</a></a></h2>
+<p>Uma wiki nos moldes da Arch Wiki, porém, abordando maneiras específicas do NixOS, como o uso de módulos. Não é tão completa quanto a Arch Wiki mas definitivamente ajuda bastante.</p>
+<h2 id="a-hrefhttpsnixosorgguidesnix-pillsnix-pillsa"><a class="header" href="#a-hrefhttpsnixosorgguidesnix-pillsnix-pillsa"><a href="https://nixos.org/guides/nix-pills/">Nix Pills</a></a></h2>
+<p>Um guia mais passo a passo sobre como iniciar no Nix.</p>
 
                     </main>
 

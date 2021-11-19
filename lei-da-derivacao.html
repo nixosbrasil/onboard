@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Introdução - Nix - Onboard</title>
+        <title>Lei da Derivação - Nix - Onboard</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="o-que-voce-pode-fazer.html">O que você pode fazer</a></li><li class="chapter-item "><a href="instalacao/index.html">Instalação</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="instalacao/problemas-conhecidos.html">Problemas conhecidos</a></li><li class="chapter-item "><a href="instalacao/tipos.html">Tipos de instalação</a></li><li class="chapter-item "><a href="instalacao/comandos.html">Comandos para instalação</a></li></ol></li><li class="chapter-item "><a href="tipos-de-dados/index.html">Tipos de dados</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tipos-de-dados/numericos.html">Numérico</a></li><li class="chapter-item "><a href="tipos-de-dados/textuais.html">Textual</a></li><li class="chapter-item "><a href="tipos-de-dados/listas.html">Lista</a></li><li class="chapter-item "><a href="tipos-de-dados/attrsets.html">Attrset</a></li><li class="chapter-item "><a href="tipos-de-dados/funcoes.html">Função</a></li><li class="chapter-item "><a href="tipos-de-dados/derivacoes.html">Derivação</a></li></ol></li><li class="chapter-item "><a href="expressoes/index.html">Expressões</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="expressoes/let.html">Let</a></li><li class="chapter-item "><a href="expressoes/inherit.html">Inherit</a></li><li class="chapter-item "><a href="expressoes/with.html">With</a></li></ol></li><li class="chapter-item "><a href="como-pensar-em-nix/index.html">Como pensar em Nix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="como-pensar-em-nix/avaliacao-preguicosa.html">Avaliação preguiçosa</a></li><li class="chapter-item "><a href="como-pensar-em-nix/recursoes.html">Recursões</a></li></ol></li><li class="chapter-item "><a href="design-patterns/index.html">Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design-patterns/funcoes.html">Funções</a></li><li class="chapter-item "><a href="design-patterns/inputs.html">inputs</a></li><li class="chapter-item "><a href="design-patterns/callPackage.html">callPackage</a></li><li class="chapter-item "><a href="design-patterns/override.html">override</a></li></ol></li><li class="chapter-item "><a href="lei-da-derivacao.html">Lei da Derivação</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li><li class="spacer"></li><li class="chapter-item "><a href="externo/index.html">Externo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/awesome-nix.html">Awesome Nix</a></li><li class="chapter-item "><a href="externo/digital-gardens/index.html">Digital Gardens</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/digital-gardens/freire.html">Victor Freire</a></li></ol></li><li class="chapter-item "><a href="externo/dotfiles/index.html">Dotfiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/dotfiles/lucasew.html">lucasew</a></li></ol></li><li class="chapter-item "><a href="externo/extra.html">Referências externas adicionais</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="o-que-voce-pode-fazer.html">O que você pode fazer</a></li><li class="chapter-item "><a href="instalacao/index.html">Instalação</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="instalacao/problemas-conhecidos.html">Problemas conhecidos</a></li><li class="chapter-item "><a href="instalacao/tipos.html">Tipos de instalação</a></li><li class="chapter-item "><a href="instalacao/comandos.html">Comandos para instalação</a></li></ol></li><li class="chapter-item "><a href="tipos-de-dados/index.html">Tipos de dados</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tipos-de-dados/numericos.html">Numérico</a></li><li class="chapter-item "><a href="tipos-de-dados/textuais.html">Textual</a></li><li class="chapter-item "><a href="tipos-de-dados/listas.html">Lista</a></li><li class="chapter-item "><a href="tipos-de-dados/attrsets.html">Attrset</a></li><li class="chapter-item "><a href="tipos-de-dados/funcoes.html">Função</a></li><li class="chapter-item "><a href="tipos-de-dados/derivacoes.html">Derivação</a></li></ol></li><li class="chapter-item "><a href="expressoes/index.html">Expressões</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="expressoes/let.html">Let</a></li><li class="chapter-item "><a href="expressoes/inherit.html">Inherit</a></li><li class="chapter-item "><a href="expressoes/with.html">With</a></li></ol></li><li class="chapter-item "><a href="como-pensar-em-nix/index.html">Como pensar em Nix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="como-pensar-em-nix/avaliacao-preguicosa.html">Avaliação preguiçosa</a></li><li class="chapter-item "><a href="como-pensar-em-nix/recursoes.html">Recursões</a></li></ol></li><li class="chapter-item "><a href="design-patterns/index.html">Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design-patterns/funcoes.html">Funções</a></li><li class="chapter-item "><a href="design-patterns/inputs.html">inputs</a></li><li class="chapter-item "><a href="design-patterns/callPackage.html">callPackage</a></li><li class="chapter-item "><a href="design-patterns/override.html">override</a></li></ol></li><li class="chapter-item expanded "><a href="lei-da-derivacao.html" class="active">Lei da Derivação</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li><li class="spacer"></li><li class="chapter-item "><a href="externo/index.html">Externo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/awesome-nix.html">Awesome Nix</a></li><li class="chapter-item "><a href="externo/digital-gardens/index.html">Digital Gardens</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/digital-gardens/freire.html">Victor Freire</a></li></ol></li><li class="chapter-item "><a href="externo/dotfiles/index.html">Dotfiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/dotfiles/lucasew.html">lucasew</a></li></ol></li><li class="chapter-item "><a href="externo/extra.html">Referências externas adicionais</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -113,7 +113,7 @@
                         <a href="https://github.com/nixosbrasil/onboard" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/nixosbrasil/onboard/edit/master/guide/src/0-introducao.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/nixosbrasil/onboard/edit/master/guide/src/lei-da-derivacao.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
@@ -140,17 +140,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="introdução"><a class="header" href="#introdução">Introdução</a></h1>
-<p>Nix é uma ferramenta que aplica conceitos e questões da programação funcional em transformação de arquivos.</p>
-<p>Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja algo bem mais generalizável.</p>
-<p>O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que muda totalmente o jogo: O conceito de derivação.</p>
-<p>Derivação é um dos tipos de dados da linguagem Nix que vai ser melhor abordado na seção de <strong>Tipos de dados</strong>.</p>
+                        <h1 id="lei-da-derivação"><a class="header" href="#lei-da-derivação">Lei da <code>Derivação</code></a></h1>
+<p>Seja</p>
+<ul>
+<li>uma derivação D(a, b, c, ...) = z que transforma as entradas em z.</li>
+<li>uma <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash">função de hash</a> H(x) que calcula um hash de algum x, pode ser por exemplo a <a href="https://pt.wikipedia.org/wiki/SHA-2">SHA256</a>.</li>
+</ul>
+<p>Uma <code>realização</code> de uma <code>derivação</code> precisa:</p>
+<ul>
+<li>Para ter acesso a internet: H(z) pré-definido</li>
+<li>Para conseguir executar sem H(z) definido: a definição de todas as derivações de entrada já em formato de closure, ou seja, executadas e acessíveis através da nix store.</li>
+</ul>
+<h1 id="exemplos"><a class="header" href="#exemplos">Exemplos</a></h1>
+<ul>
+<li>Derivações que baixam coisas da internet para poderem realizar este trabalho DEVEM ter o hash do arquivo baixado definido junto.</li>
+<li>Para compilar o Python é necessário um compilador de C, como por exemplo o GCC. Não é possível <em>realizar</em> a derivação do Python sem um compilador assumindo que a derivação do Python não vai baixar do cache.</li>
+<li>É possível usar o Nix para conversão de vídeos e para realizar a conversão em sí é necessário, por exemplo, um programa chamado <a href="https://ffmpeg.org/">ffmpeg</a>. Se a derivação do ffmpeg ainda não estiver realizada em uma closure não é possível iniciar a conversão.</li>
+<li>A closure de uma derivação pode ser exportada para outra máquina evitando assim que ela seja re-realizada, e é assim que caches binários funcionam.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="o-que-voce-pode-fazer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="prev" href="design-patterns/override.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="analogia-hashmap-arvore.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -159,7 +175,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="o-que-voce-pode-fazer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="prev" href="design-patterns/override.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="analogia-hashmap-arvore.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

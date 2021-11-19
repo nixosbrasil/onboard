@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item expanded "><a href="analogia-hashmap-arvore.html" class="active">Analogia: hashmap vs árvore</a></li></ol>
+                <ol class="chapter"><li class="chapter-item "><a href="0-introducao.html">Introdução</a></li><li class="chapter-item "><a href="o-que-voce-pode-fazer.html">O que você pode fazer</a></li><li class="chapter-item "><a href="instalacao/index.html">Instalação</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="instalacao/problemas-conhecidos.html">Problemas conhecidos</a></li><li class="chapter-item "><a href="instalacao/tipos.html">Tipos de instalação</a></li><li class="chapter-item "><a href="instalacao/comandos.html">Comandos para instalação</a></li></ol></li><li class="chapter-item "><a href="tipos-de-dados/index.html">Tipos de dados</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tipos-de-dados/numericos.html">Numérico</a></li><li class="chapter-item "><a href="tipos-de-dados/textuais.html">Textual</a></li><li class="chapter-item "><a href="tipos-de-dados/listas.html">Lista</a></li><li class="chapter-item "><a href="tipos-de-dados/attrsets.html">Attrset</a></li><li class="chapter-item "><a href="tipos-de-dados/funcoes.html">Função</a></li><li class="chapter-item "><a href="tipos-de-dados/derivacoes.html">Derivação</a></li></ol></li><li class="chapter-item "><a href="expressoes/index.html">Expressões</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="expressoes/let.html">Let</a></li><li class="chapter-item "><a href="expressoes/inherit.html">Inherit</a></li><li class="chapter-item "><a href="expressoes/with.html">With</a></li></ol></li><li class="chapter-item "><a href="como-pensar-em-nix/index.html">Como pensar em Nix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="como-pensar-em-nix/avaliacao-preguicosa.html">Avaliação preguiçosa</a></li><li class="chapter-item "><a href="como-pensar-em-nix/recursoes.html">Recursões</a></li></ol></li><li class="chapter-item "><a href="design-patterns/index.html">Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design-patterns/funcoes.html">Funções</a></li><li class="chapter-item "><a href="design-patterns/inputs.html">inputs</a></li><li class="chapter-item "><a href="design-patterns/callPackage.html">callPackage</a></li><li class="chapter-item "><a href="design-patterns/override.html">override</a></li></ol></li><li class="chapter-item "><a href="lei-da-derivacao.html">Lei da Derivação</a></li><li class="chapter-item expanded "><a href="analogia-hashmap-arvore.html" class="active">Analogia: hashmap vs árvore</a></li><li class="spacer"></li><li class="chapter-item "><a href="externo/index.html">Externo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/awesome-nix.html">Awesome Nix</a></li><li class="chapter-item "><a href="externo/digital-gardens/index.html">Digital Gardens</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/digital-gardens/freire.html">Victor Freire</a></li></ol></li><li class="chapter-item "><a href="externo/dotfiles/index.html">Dotfiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/dotfiles/lucasew.html">lucasew</a></li></ol></li><li class="chapter-item "><a href="externo/extra.html">Referências externas adicionais</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -156,15 +156,18 @@ aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
 <p>A cada atualização de pacote esta biblioteca virava um arquivo diferente e, consequentemente, o polybar tinha que ser atualizado para procurar pelo novo nome. Mensalmente, quando eu atualizava, o polybar simplesmente se recusava de abrir e aí é que reside a analogia do <em>hashmap</em>.</p>
 <p>Quando um pacote é atualizado pelo pacman a versão nova é sobrescrita em cima da antiga e qualquer coisa que assuma algum detalhe de uma versão em específico vai quebrar, e esse é o perigo da mutabilidade.</p>
 <p>O Nix não tem esse problema.</p>
-<p>Ao invés do pacote polybar depender do jsoncpp, uma <em>derivation</em> que compilará o polybar dependerá da <em>derivation</em> que compila o jsoncpp. Caso o jsoncpp atualize, a <em>derivation</em> do polybar será alterada por consequência.</p>
+<p>Ao invés do pacote polybar depender do jsoncpp, uma derivação que compilará o polybar dependerá da derivação que compila o jsoncpp. Caso o jsoncpp atualize, a derivação do polybar será alterada por consequência.</p>
 <p><img src="assets/ex-nix-path-tese-nixos.png" alt="Exemplo que pode ser encontrado na tese sobre o NixOS" /></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="0-introducao.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="lei-da-derivacao.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="externo/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -172,8 +175,11 @@ aprofundaremos tanto neste assunto, somente o que for pertinente neste caso.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="0-introducao.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="lei-da-derivacao.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="externo/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 

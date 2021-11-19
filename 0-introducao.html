@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="0-introducao.html" class="active">Introdução</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="0-introducao.html" class="active">Introdução</a></li><li class="chapter-item "><a href="o-que-voce-pode-fazer.html">O que você pode fazer</a></li><li class="chapter-item "><a href="instalacao/index.html">Instalação</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="instalacao/problemas-conhecidos.html">Problemas conhecidos</a></li><li class="chapter-item "><a href="instalacao/tipos.html">Tipos de instalação</a></li><li class="chapter-item "><a href="instalacao/comandos.html">Comandos para instalação</a></li></ol></li><li class="chapter-item "><a href="tipos-de-dados/index.html">Tipos de dados</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="tipos-de-dados/numericos.html">Numérico</a></li><li class="chapter-item "><a href="tipos-de-dados/textuais.html">Textual</a></li><li class="chapter-item "><a href="tipos-de-dados/listas.html">Lista</a></li><li class="chapter-item "><a href="tipos-de-dados/attrsets.html">Attrset</a></li><li class="chapter-item "><a href="tipos-de-dados/funcoes.html">Função</a></li><li class="chapter-item "><a href="tipos-de-dados/derivacoes.html">Derivação</a></li></ol></li><li class="chapter-item "><a href="expressoes/index.html">Expressões</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="expressoes/let.html">Let</a></li><li class="chapter-item "><a href="expressoes/inherit.html">Inherit</a></li><li class="chapter-item "><a href="expressoes/with.html">With</a></li></ol></li><li class="chapter-item "><a href="como-pensar-em-nix/index.html">Como pensar em Nix</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="como-pensar-em-nix/avaliacao-preguicosa.html">Avaliação preguiçosa</a></li><li class="chapter-item "><a href="como-pensar-em-nix/recursoes.html">Recursões</a></li></ol></li><li class="chapter-item "><a href="design-patterns/index.html">Design Patterns</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="design-patterns/funcoes.html">Funções</a></li><li class="chapter-item "><a href="design-patterns/inputs.html">inputs</a></li><li class="chapter-item "><a href="design-patterns/callPackage.html">callPackage</a></li><li class="chapter-item "><a href="design-patterns/override.html">override</a></li></ol></li><li class="chapter-item "><a href="lei-da-derivacao.html">Lei da Derivação</a></li><li class="chapter-item "><a href="analogia-hashmap-arvore.html">Analogia: hashmap vs árvore</a></li><li class="spacer"></li><li class="chapter-item "><a href="externo/index.html">Externo</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/awesome-nix.html">Awesome Nix</a></li><li class="chapter-item "><a href="externo/digital-gardens/index.html">Digital Gardens</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/digital-gardens/freire.html">Victor Freire</a></li></ol></li><li class="chapter-item "><a href="externo/dotfiles/index.html">Dotfiles</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="externo/dotfiles/lucasew.html">lucasew</a></li></ol></li><li class="chapter-item "><a href="externo/extra.html">Referências externas adicionais</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -141,29 +141,16 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="introdução"><a class="header" href="#introdução">Introdução</a></h1>
-<p>Nix é uma ferramenta que aplica conceitos e questões da programação funcional em transformação de arquivos.
-Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja mais.</p>
-<p>O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que
-muda totalmente o jogo: O conceito de <em>derivation</em>.</p>
-<h1 id="o-que-são-derivations"><a class="header" href="#o-que-são-derivations">O que são <em>derivations</em>?</a></h1>
-<p><em>Derivation</em> é o conceito de funções puras aplicadas a arquivos. A forma tradicional é utilizando a memória RAM.</p>
-<p>Linguagens de programação geralmente usam um espaço de heap em que alocam memória para os objetos em blocos, nas <em>derivations</em> o espaço alocado é na <em>nix-store</em>, que geralmente se localiza na pasta <code>/nix/store</code>. Cada objeto é um item nessa pasta.</p>
-<p>Os itens dessa pasta podem ser classificados em dois tipos:</p>
-<ul>
-<li><em>Derivations</em>: aqueles arquivos de extensão <code>drv</code> que são basicamente especificações mastigadas para realizar as transformações 
-em uma <em>derivation</em></li>
-<li><em>Realizations</em>: o processo de transformar uma definição no objeto em sí é chamado de realization, esses caminhos são gerados
-dos <code>drv</code> ou baixados de caches.</li>
-</ul>
-<p>As <em>realizations</em> podem ser apenas um arquivo ou uma pasta com arquivos.</p>
-<p><em>Derivations</em> podem ter dependências em outras <em>derivations</em> o que gera um efeito cascata. Se <code>a</code> depende de <code>b</code> e <code>a</code> for realizada primeiro o Nix realizará <code>b</code> e então realizará <code>a</code>. Este conceito de dependência é aplicado para substituir o comportamento de <em>hashmap</em> de gerenciadores de pacote tradicionais e permite que o Nix tenha dois pacotes do mesmo programa em versões diferentes sem que um conflite com o outro, assim como uma árvore. Esta analogia será melhor explicada em breve.</p>
-<p>O resto basicamente aproveita esta base para produzir algo mais complexo, inclusive o NixOS, sistemas de módulos, scripts de ativação e tudo mais.</p>
+<p>Nix é uma ferramenta que aplica conceitos e questões da programação funcional em transformação de arquivos.</p>
+<p>Um dos títulos que dão ao Nix é que ele é um gerenciador de pacotes mas a base dele permite que ele seja algo bem mais generalizável.</p>
+<p>O Nix em sí é uma linguagem de programação de tipagem dinâmica que segue o paradigma funcional e seus conceitos mas que possui um diferencial que muda totalmente o jogo: O conceito de derivação.</p>
+<p>Derivação é um dos tipos de dados da linguagem Nix que vai ser melhor abordado na seção de <strong>Tipos de dados</strong>.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="analogia-hashmap-arvore.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="o-que-voce-pode-fazer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -172,7 +159,7 @@ dos <code>drv</code> ou baixados de caches.</li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="analogia-hashmap-arvore.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="o-que-voce-pode-fazer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
