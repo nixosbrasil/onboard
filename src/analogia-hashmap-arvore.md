@@ -29,6 +29,6 @@ Quando um pacote é atualizado pelo pacman a versão nova é sobrescrita em cima
 
 O Nix não tem esse problema.
 
-Ao invés do pacote polybar depender do jsoncpp, uma _derivation_ que compilará o polybar dependerá da _derivation_ que compila o jsoncpp. Caso o jsoncpp atualize, a _derivation_ do polybar será alterada por consequência.
+Ao invés do pacote polybar depender do jsoncpp, uma derivação que compilará o polybar dependerá da derivação que compila o jsoncpp. Caso o jsoncpp atualize, a derivação do polybar será alterada por consequência.
 
 ![Exemplo que pode ser encontrado na tese sobre o NixOS](assets/ex-nix-path-tese-nixos.png)
