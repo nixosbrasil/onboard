@@ -19,4 +19,4 @@ let
 in a
 ```
 
-Esta lógica funciona desde em expressões que começam no mesmo arquivo até em valores que são gerados no decorrer de centenas ou mais de arquivos como é com o nixpkgs.
+Esta lógica funciona desde expressões que começam no mesmo arquivo, até em valores que são gerados no decorrer de centenas ou mais de arquivos como é com o nixpkgs.
