@@ -11,3 +11,6 @@ Uma wiki nos moldes da Arch Wiki, porém, abordando maneiras específicas do Nix
 
 ## [Nix Pills](https://nixos.org/guides/nix-pills/)
 Um guia mais passo a passo sobre como iniciar no Nix.
+
+## [nix-1p](https://github.com/tazjin/nix-1p)
+Um guia bem direto ao ponto em inglês sobre conceitos básicos de Nix.
