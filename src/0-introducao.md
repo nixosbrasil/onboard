@@ -4,7 +4,12 @@
 
 **[Nix](https://nixos.org/explore.html)**<sup>🇬🇧</sup> é um gerenciador de pacotes de software como dpkg/apt do Debian ou rpm do RedHat. Entretanto, assim como AppImage, Flatpack e Snap, pode ser instalado em *qualquer distribuição Linux*, e também em *Android*, *MacOS* ou *WSL*.
 
-Seu principal foco é que os pacotes sejam 100% reproduzíveis, para isso isola a compilação do pacote, não permitindo acesso à internet, bibliotecas ou ferramentas externas que não possuam versão (hash) ou não estejam declaradas como dependência. 
+Nix tem um foco em _reproducibilidade_. Para isso, ele toma uma série de medidas, entre elas:
+
+- separa a aquisição de fontes (código-fonte propriamente dito, _patches_ etc.) das demais fases de construção do pacote;
+- exige verificação (mediante _hash sum_) das fontes adquiridas;
+- impede o acesso à Internet durante a compilação do pacote;
+- impede o acesso a arquivos e programas que não foram explicitamente requisitados como dependências;
 
 Também tenta isolar as dependências no momento da execução, por isso ao invés de usar as dependências de um diretório único compartilhado como */lib* usa vários diretórios com hash das dependencias */nix/store/HASH-DEPENDENCIA/lib*, permitindo diferentes versões da mesma dependência, trocando conflitos por duplicidade.
 
