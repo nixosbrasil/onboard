@@ -11,7 +11,8 @@ Nix tem um foco em _reproducibilidade_. Para isso, ele toma uma série de medida
 - impede o acesso à Internet durante a compilação do pacote;
 - impede o acesso a arquivos e programas que não foram explicitamente requisitados como dependências;
 
-Também tenta isolar as dependências no momento da execução, por isso ao invés de usar as dependências de um diretório único compartilhado como */lib* usa vários diretórios com hash das dependencias */nix/store/HASH-DEPENDENCIA/lib*, permitindo diferentes versões da mesma dependência, trocando conflitos por duplicidade.
+Gerenciadores de pacotes tradicionais instalam seus pacotes diretamente na raiz do sistema, gerando arquivos espalhados em diversos diretórios.
+Por outro lado, Nix instala cada pacote em um diretório dedicado, por padrão dentro de `/nix/store/`, em um formato similar a `/nix/store/<hash>-<nome do pacote>/{bin, lib, share, . . . }`
 
 A reproduzibilidade e o isolamento, permitem que qualquer máquina com Nix e SSH sejam utilizadas para gerar os pacotes, permitindo escalar a quantidade de empacotadores e deixar que outras maquinas mais potentes produzam o pacote caso seja um processo intensivo, como a compilação de código.
 
