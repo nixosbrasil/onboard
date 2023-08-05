@@ -1,6 +1,6 @@
 # Introdução
 
-## Nix o gerenciador de pacotes
+## O gerenciador de pacotes Nix
 
 **[Nix](https://nixos.org/explore.html)**<sup>🇬🇧</sup> é um gerenciador de pacotes de software como dpkg/apt do Debian ou rpm do RedHat. Entretanto, assim como AppImage, Flatpack e Snap, pode ser instalado em *qualquer distribuição Linux*, e também em *Android*, *MacOS* ou *WSL*.
 
