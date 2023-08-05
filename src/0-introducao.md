@@ -14,9 +14,9 @@ Nix tem um foco em _reproducibilidade_. Para isso, ele toma uma série de medida
 Gerenciadores de pacotes tradicionais instalam seus pacotes diretamente na raiz do sistema, gerando arquivos espalhados em diversos diretórios.
 Por outro lado, Nix instala cada pacote em um diretório dedicado, por padrão dentro de `/nix/store/`, em um formato similar a `/nix/store/<hash>-<nome do pacote>/{bin, lib, share, . . . }`
 
-A reproduzibilidade e o isolamento, permitem que qualquer máquina com Nix e SSH sejam utilizadas para gerar os pacotes, permitindo escalar a quantidade de empacotadores e deixar que outras maquinas mais potentes produzam o pacote caso seja um processo intensivo, como a compilação de código.
 
-Pode have ainda um terceiro servidor especializado em hospedar os pacotes, o padrão é [cache.nixos.org](https://cache.nixos.org)<sup>🇬🇧</sup> que possui cache de boa parte pacotes de nixpkgs, porém, é possível configurar teu próprio utilizando outra máquina com SSH, HTTP ou API do S3.
+Este conjunto de medidas, bem como muitas outras, garante a reprodutibilidade da compilação. Em razão disso, é possível acelerar a compilação de pacotes ao mantê-los em um servidor de cache.
+Por padrão, o projeto NixOS fornece o servidor [cache.nixos.org](https://cache.nixos.org),mas é perfeitamente possível configurar e utilizar outros.
 
 ## Nix a linguagem
 
