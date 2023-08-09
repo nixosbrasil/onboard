@@ -28,7 +28,6 @@ Essas informações devem ser descritas geralmente em um arquivo `default.nix` u
 
 Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está configurada por padrão, chamada **[nixpkgs](https://search.nixos.org)**, às vezes referenciada apenas como **pkgs**. 
 
-Apesar de todos pacotes estarem configurados, devido à linguagem Nix só ler que for de fato utilizado, nenhum destes pacotes será instalado em sua máquina a menos que usados como dependência de algum outro *pacote* ou um *pacote de ambiente* que esteja instalado.
 
 ### NixOS sistema operacional como *pacote de ambiente*
 
