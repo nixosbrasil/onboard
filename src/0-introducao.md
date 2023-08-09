@@ -18,7 +18,7 @@ Por outro lado, Nix instala cada pacote em um diretório dedicado, por padrão d
 Este conjunto de medidas, bem como muitas outras, garante a reprodutibilidade da compilação. Em razão disso, é possível acelerar a compilação de pacotes ao mantê-los em um servidor de cache.
 Por padrão, o projeto NixOS fornece o servidor [cache.nixos.org](https://cache.nixos.org), mas é perfeitamente possível configurar e utilizar outros.
 
-## Nix a linguagem
+## A Linguagem Nix
 
 Para cada pacote são necessárias informações como nome, origem do código-fonte (caminho ou endereço online), versão (hash), dependências e instruções de compilação ou empacotamento. 
 
