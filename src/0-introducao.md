@@ -2,7 +2,7 @@
 
 ## O gerenciador de pacotes Nix
 
-**[Nix](https://nixos.org/explore.html)**<sup>🇬🇧</sup> é um gerenciador de pacotes de software como dpkg/apt do Debian ou rpm do RedHat. Entretanto, assim como AppImage, Flatpack e Snap, pode ser instalado em *qualquer distribuição Linux*, e também em *Android*, *MacOS* ou *WSL*.
+**[Nix](https://nixos.org/explore.html)** é um gerenciador de pacotes de software como dpkg/apt do Debian ou rpm do RedHat. Entretanto, assim como AppImage, Flatpack e Snap, pode ser instalado em *qualquer distribuição Linux*, e também em *Android*, *MacOS* ou *WSL*.
 
 Nix tem um foco em _reproducibilidade_. Para isso, ele toma uma série de medidas, entre elas:
 
@@ -26,25 +26,25 @@ Essas informações devem ser descritas geralmente em um arquivo `default.nix` u
 
 ## Nixpkgs a coleção de pacotes
 
-Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está configurada por padrão, chamada **[nixpkgs](https://search.nixos.org)**<sup>🇬🇧</sup>, às vezes referenciada apenas como **pkgs**. 
+Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está configurada por padrão, chamada **[nixpkgs](https://search.nixos.org)**, às vezes referenciada apenas como **pkgs**. 
 
 Apesar de todos pacotes estarem configurados, devido à linguagem Nix só ler que for de fato utilizado, nenhum destes pacotes será instalado em sua máquina a menos que usados como dependência de algum outro *pacote* ou um *pacote de ambiente* que esteja instalado.
 
 ### NixOS sistema operacional como *pacote de ambiente*
 
-**[NixOS](https://nixos.org/download.html#nixos-iso)**<sup>🇬🇧</sup> é um pacote Nix contendo todas as dependências para se iniciar o *sistema operacional linux*, tal como kernel, grub ou efi e outras como systemd, xorg ou wayland, e ferramentas de reinstalação.
+**[NixOS](https://nixos.org/download.html#nixos-iso)** é um pacote Nix contendo todas as dependências para se iniciar o *sistema operacional linux*, tal como kernel, grub ou efi e outras como systemd, xorg ou wayland, e ferramentas de reinstalação.
 
-As configurações (ie. quase tudo que costuma ir no /etc), são pacotes e para facilitar a criação dos pacotes de configuração, foi criado um framework também usando a linguagem Nix, chamado **[Nix Modules](https://search.nixos.org/options)**<sup>🇬🇧</sup>, que permite usuário validar e reutilizar configurações para, por exemplo, criação de usuários, instalação pacotes e serviços.
+As configurações (ie. quase tudo que costuma ir no /etc), são pacotes e para facilitar a criação dos pacotes de configuração, foi criado um framework também usando a linguagem Nix, chamado **[Nix Modules](https://search.nixos.org/options)**, que permite usuário validar e reutilizar configurações para, por exemplo, criação de usuários, instalação pacotes e serviços.
 
 A reconfiguração de NixOS na realidade é a geração de um novo pacote, referenciando todos pacotes e configurações (inalteradas e alteradas) e que é reinstalado. Como o pacote anterior não é automaticamente descartado, lhe será permitido reinstalar a versão anterior para casos de falha com a versão nova.
 
 ### HomeMananger configurações do usuário como *pacote de ambiente*
 
-Utilizando o mesmo conceito do NixOS, **[HomeManager](https://github.com/nix-community/home-manager)**<sup>🇬🇧</sup> é um *pacote das configurações do usuário*, permitindo instalar pacotes ou configurações especificas para seu usuário, apesar de NixOS também permitir configurações por usuário, HomeManager pode ser instalado em outras distribuições, MacOS e WSL, além disto, possui algumas configurações únicas, sendo usado também em conjunto com NixOS.
+Utilizando o mesmo conceito do NixOS, **[HomeManager](https://github.com/nix-community/home-manager)** é um *pacote das configurações do usuário*, permitindo instalar pacotes ou configurações especificas para seu usuário, apesar de NixOS também permitir configurações por usuário, HomeManager pode ser instalado em outras distribuições, MacOS e WSL, além disto, possui algumas configurações únicas, sendo usado também em conjunto com NixOS.
 
 ### Projetos como *pacote de ambiente*
 
-Caso um desenvolvedor de software, cientista de dados, ou qualquer profissional que precise *ferramentas diferentes para diferentes projetos* do dia a dia, é possível criar um *ambiente para cada projeto*, atualmente exitem diversas ferramentas, algumas usando Nix Modules como [DevEnv](https://github.com/cachix/devenv)<sup>🇬🇧</sup> e [DevShell](https://github.com/numtide/devshell)<sup>🇬🇧</sup> outras usando apenas pacotes como [DevBox](https://github.com/jetpack-io/devbox)<sup>🇬🇧</sup> e [Flox](https://github.com/flox/flox)<sup>🇬🇧</sup>. Também é possível criar teu próprio ambiente apenas com Nix e Nixpkgs criando um arquivo `shell.nix` contendo as definições do teu pacote de ambiente.
+Caso um desenvolvedor de software, cientista de dados, ou qualquer profissional que precise *ferramentas diferentes para diferentes projetos* do dia a dia, é possível criar um *ambiente para cada projeto*, atualmente exitem diversas ferramentas, algumas usando Nix Modules como [DevEnv](https://github.com/cachix/devenv) e [DevShell](https://github.com/numtide/devshell) outras usando apenas pacotes como [DevBox](https://github.com/jetpack-io/devbox) e [Flox](https://github.com/flox/flox). Também é possível criar teu próprio ambiente apenas com Nix e Nixpkgs criando um arquivo `shell.nix` contendo as definições do teu pacote de ambiente.
 
 Existe ainda a possibilidade de iniciar ambiente diretamente usando o comando `nix-shell -p DEPENDENCIA`.
 
@@ -53,6 +53,6 @@ Existe ainda a possibilidade de iniciar ambiente diretamente usando o comando `n
 Existem também algumas ferramentas para:
 
 - Imagens OSI usadas por Docker, Kubernetes, etc.
-- [Imagens de máquina virtual](https://github.com/nix-community/nixos-generators)<sup>🇬🇧</sup>.
+- [Imagens de máquina virtual](https://github.com/nix-community/nixos-generators)>.
 - Pacotes para dpkg/apt e rpm/yum.
-- [Configurar qualquer outra distribuição Linux](https://github.com/numtide/system-manager)<sup>🇬🇧</sup> da mesma forma que o NixOS.
+- [Configurar qualquer outra distribuição Linux](https://github.com/numtide/system-manager)> da mesma forma que o NixOS.
