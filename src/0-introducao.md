@@ -31,11 +31,16 @@ Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está conf
 
 ### NixOS sistema operacional como *pacote de ambiente*
 
-**[NixOS](https://nixos.org/download.html#nixos-iso)** é um pacote Nix contendo todas as dependências para se iniciar o *sistema operacional linux*, tal como kernel, grub ou efi e outras como systemd, xorg ou wayland, e ferramentas de reinstalação.
+**[NixOS](https://nixos.org/)** é uma distribuição Linux de referência, construída com base no gerenciador Nix e nos pacotes do Nixpkgs.
 
-As configurações (ie. quase tudo que costuma ir no /etc), são pacotes e para facilitar a criação dos pacotes de configuração, foi criado um framework também usando a linguagem Nix, chamado **[Nix Modules](https://search.nixos.org/options)**, que permite usuário validar e reutilizar configurações para, por exemplo, criação de usuários, instalação pacotes e serviços.
+NixOS é projetada como um conjunto de módulos que podem ser combinados pelo usuário, permitindo uma vasta gama de customizações, indo desde o gerenciador de boot e o kernel até desktops inteiros como o KDE Plasma e o Gnome.
 
-A reconfiguração de NixOS na realidade é a geração de um novo pacote, referenciando todos pacotes e configurações (inalteradas e alteradas) e que é reinstalado. Como o pacote anterior não é automaticamente descartado, lhe será permitido reinstalar a versão anterior para casos de falha com a versão nova.
+Tal configuração não está limitada à simples instalação dos softwares, mas também se estende às suas configurações. Enquanto em distros tradicionais o usuário necessita editar arquivos espalhados pelo `/etc`, o sistema de módulos do NixOS também realiza esta configuração.
+
+Grosso modo, o próprio NixOS é tratado como um pacote de software do ponto de vista do gerenciador Nix.
+
+Uma propriedade interessante do sistema NixOS é o suporte à reversão (_rollback_), onde iterações anteriores (conhecidas como _gerações_) não são automaticamente apagadas, permanecendo disponíveis para serem utilizadas em caso de alguma falha na geração atual.
+
 
 ### HomeMananger configurações do usuário como *pacote de ambiente*
 
