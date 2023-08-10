@@ -24,7 +24,7 @@ Para cada pacote são necessárias informações como nome, origem do código-fo
 
 Essas informações devem ser descritas geralmente em um arquivo `default.nix` usando a linguagem programação de domínio especifico do Nix, também chamada **Nix** ou **Nix DSL**, é parecida com JSON, mas tem funções, variáveis pode importar outros arquivos Nix.
 
-## Nixpkgs a coleção de pacotes
+## Nixpkgs
 
 Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está configurada por padrão, chamada **[nixpkgs](https://search.nixos.org)**, às vezes referenciada apenas como **pkgs**. 
 
