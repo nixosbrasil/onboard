@@ -29,7 +29,7 @@ Essas informações devem ser descritas geralmente em um arquivo `default.nix` u
 Existe uma coleção comunitária com mais de 80 mil pacotes Nix, que está configurada por padrão, chamada **[nixpkgs](https://search.nixos.org)**, às vezes referenciada apenas como **pkgs**. 
 
 
-### NixOS sistema operacional como *pacote de ambiente*
+### NixOS
 
 **[NixOS](https://nixos.org/)** é uma distribuição Linux de referência, construída com base no gerenciador Nix e nos pacotes do Nixpkgs.
 
