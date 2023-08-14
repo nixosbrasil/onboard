@@ -44,7 +44,13 @@ Uma propriedade interessante do sistema NixOS é o suporte à reversão (_rollba
 
 ### HomeMananger configurações do usuário como *pacote de ambiente*
 
-Utilizando o mesmo conceito do NixOS, **[HomeManager](https://github.com/nix-community/home-manager)** é um *pacote das configurações do usuário*, permitindo instalar pacotes ou configurações especificas para seu usuário, apesar de NixOS também permitir configurações por usuário, HomeManager pode ser instalado em outras distribuições, MacOS e WSL, além disto, possui algumas configurações únicas, sendo usado também em conjunto com NixOS.
+O **[HomeManager](https://nix-community.github.io/home-manager)** é outro sistema modular escrito em Nix, com a diferença que este é voltado para o usuário, em contraste com o NixOS, que é voltado para o sistema como um todo.
+
+Enquanto o NixOS alavanca o Nixpkgs para o administrador do sistema operacional, o Home Manager alavanca o mesmo Nixpkgs para o usuário comum. 
+
+A exemplo do seu irmão maior, o Home Manager também instala e configura os pacotes instalados, auxiliando na geração automatizada dos famigerados _dotfiles_.
+
+Atualmente, o Home Manager conta com suporte ao NixOS, ao MacOS X e a virtualmente todas as distros Linux, o que o torna uma opção interessante para quem deseja utilizar softwares ainda não presentes na sua distro local.
 
 ### Projetos como *pacote de ambiente*
 
