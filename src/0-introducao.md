@@ -42,7 +42,7 @@ Grosso modo, o próprio NixOS é tratado como um pacote de software do ponto de 
 Uma propriedade interessante do sistema NixOS é o suporte à reversão (_rollback_), onde iterações anteriores (conhecidas como _gerações_) não são automaticamente apagadas, permanecendo disponíveis para serem utilizadas em caso de alguma falha na geração atual.
 
 
-### HomeMananger configurações do usuário como *pacote de ambiente*
+### Home Mananger
 
 O **[HomeManager](https://nix-community.github.io/home-manager)** é outro sistema modular escrito em Nix, com a diferença que este é voltado para o usuário, em contraste com o NixOS, que é voltado para o sistema como um todo.
 
